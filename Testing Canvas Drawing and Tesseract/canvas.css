@@ -1,3 +1,9 @@
+body {
+    background-color: #f4f3ef;
+}
+
 #myCanvas {
+    background-color: white;
     border: 4px outset;
+    cursor: crosshair;
 }
