@@ -1,18 +1,18 @@
-var question1 = `<div class="row">
-            <div class="col-sm-12 col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" align="center">
-                <canvas id="myCanvas" class="img-responsive" width="600" height="400"></canvas>
-            </div>
-            <button class="btn btn-default" style="margin-top: 200px" onclick="javascript:MoveNextQuestion();return false;">Next</button>
-        </div>
-
-        <br /><br />
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
-                <button class="btn btn-default" onclick="javascript:clearArea();return false;">Clear Area</button>
-                <button class="btn btn-default" onclick="javascript:testImage();return false;">Test</button>
-            </div>
-        </div>`
+// var question1 = `<div class="row">
+//             <div class="col-sm-12 col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" align="center">
+//                 <canvas id="myCanvas" class="img-responsive" width="600" height="400"></canvas>
+//             </div>
+//             <button class="btn btn-default" style="margin-top: 200px" onclick="javascript:MoveNextQuestion();return false;">Next</button>
+//         </div>
+//
+//         <br /><br />
+//
+//         <div class="row">
+//             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+//                 <button class="btn btn-default" onclick="javascript:clearArea();return false;">Clear Area</button>
+//                 <button class="btn btn-default" onclick="javascript:testImage();return false;">Test</button>
+//             </div>
+//         </div>`
 
 var question2 = `<div class="row">
             <div class="col-md-1 col-lg-1">

@@ -1,0 +1,42 @@
+
+.content{
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-content{
+    position: relative;
+    height: calc(100vh - 75px);
+    overflow-x: scroll;
+    padding-top: 15px;
+}
+
+.round-img{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: dotted;
+    display: inline-block;
+    float: left;
+    margin: 0px 10px;
+}
+.lesson-title{
+    display: inline-block;
+    padding-left: 35px;
+    color: #343434;
+}
+.row{
+    position: relative;
+}
+.lesson-description{
+    padding-left: 15px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #9A9A9A;
+    display: inline-block;
+}
+.progress-dimentions{
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    width: 25%;
+}
