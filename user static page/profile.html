@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>AsLe</title>
@@ -8,10 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lessons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            height: auto;
+        }
+    </style>
 
     <div class="wrapper">
         <div class="sidebar" data-background-color="white" data-active-color="danger">
@@ -25,7 +34,7 @@
 
                 <ul class="nav">
                     <li class="active">
-                        <a href="../Lessons.html">
+                        <a href="../ListOfLessons.html">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <p>Lessons</p>
                         </a>
@@ -41,7 +50,7 @@
             </div>
         </div>
 
-        <div class="main-panel">
+        <div class="main-panel" style="overflow-x: hidden">
 
             <nav class=" navbar navbar-default">
                 <div class="container-fluid">
@@ -72,28 +81,131 @@
                             <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                                 <div class="card">
                                     <div class="content">
-                                        
+                                        <div class="card hovercard">
+                                            <div class="card-background">
+                                                <img class="card-bkimg" alt="" src="assets/img/256px-Yin_yang.svg.png">
+                                                <!-- http://lorempixel.com/850/280/people/9/ -->
+                                            </div>
+                                            <div class="useravatar">
+                                                <img alt="" src="assets/img/256px-Yin_yang.svg.png">
+                                            </div>
+                                            <div class="card-info"> <span class="card-title">Straton</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+
+                                            <div class="btn-group" role="group">
+                                                <button type="button" id="button_details" class="btn btn-primary" ><span class="fa fa-id-card-o" aria-hidden="true" ></span>
+                                                    <div class="hidden-xs">About</div>
+                                                </button>
+                                            </div>
+
+                                            <div class="btn-group" role="group">
+                                                <button type="button" id="button_stats" class="btn btn-default"><span class="fa fa-line-chart" aria-hidden="true"></span>
+                                                    <div class="hidden-xs">Stats</div>
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                        <!--
+                                        <div class="well">
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active" id="tab1">
+                                                    <h3>This is tab 1</h3>
+                                                </div>
+                                                <div class="tab-pane fade in" id="tab2">
+                                                    <h3>This is tab 2</h3>
+                                                </div>
+                                                <div class="tab-pane fade in" id="tab3">
+                                                    <h3>This is tab 3</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+-->
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                <div class="card">
-                                    <div class="content">
+                        
+                        
+                            <div  id="tab1">
+                                
+                                
+                                <div class="row">
+                                <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h1>Detalii</h1>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="col-lg-5 col-lg-offset-0 col-md-10 col-md-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h1>Detalii</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                </div>
+
                             </div>
 
-                            <div class="col-lg-5 col-lg-offset-0 col-md-10 col-md-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                <div class="card">
-                                    <div class="content">
+
+
+                            <div class="hidden" id="tab2">
+                                
+                                <div class="row">
+                                    
+                                
+                                     <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div id="">
+                                            </div>
+                                            <h1>Chart</h1>
+
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h1>Chart</h1>
+                                            <div id="progress_chart">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 col-lg-offset-0 col-md-10 col-md-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div id="">
+                                            </div>
+                                            <h1>Chart</h1>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
                             </div>
-                        </div>
+
+
+
+
+
 
 
                     </div>
@@ -119,6 +231,7 @@
 <script src="../assets/js/bootstrap-checkbox-radio.js"></script>
 
 <script src="../assets/js/bootstrap.js"></script>
+<script src="assets/js/tab-action.js"></script>
 
 
 </html>
