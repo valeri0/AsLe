@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Lesson</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/navbars.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/canvas.css">
+    <link rel="stylesheet" href="assets/css/Lesson.css">
+    <link href="assets/css/letter-svg.css" rel="stylesheet">
+
+
+</head>
+<body onload="InitThis();">
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AsLe</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+                <li>
+                    <a href="ListOfLessons.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Lessons</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="ListOfLessons.html">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        <p>Stats</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <i class="fa fa-user-circle user" aria-hidden="true"></i>
+                    <a href="#" style="display: inline-block">User</a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div id="wrapper" class="container-fluid">
+
+    <br/>
+
+    <div id="question-container">
+
+        <div class="row" align="center">
+            <div id="letter-drowing" align="center">
+                <div id="svg"></div>
+                <span onclick="myFunction()">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <div class="arrows">
+                <span
+                        onclick="javascript:MoveNextQuestion();return false;">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div id="canvas">
+                <canvas id="myCanvas" class="img-responsive"></canvas>
+            </div>
+
+
+            <div class="arrows">
+                <span
+                        onclick="javascript:MoveNextQuestion();return false;">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+            </div>
+
+        </div>
+
+        <br/><br/>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+                <button class="btn btn-default" onclick="javascript:clearArea();return false;">Clear Area</button>
+                <button class="btn btn-default" onclick="javascript:testImage();return false;">Test</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="result" align="center">
+
+    </div>
+</div>
+<footer class="footer">
+    <div class="container-fluid">
+
+    </div>
+</footer>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+<script type="text/javascript" src="assets/js/canvas.js"></script>
+<!--<script type="text/javascript" src="assets/js/questions_controller.js"></script>-->
+<script type="text/javascript" src="assets/js/image-recognition.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" type="text/javascript"></script>
+<script src="assets/js/letter-drawing.js" type="text/javascript"></script>
+
+</html>
