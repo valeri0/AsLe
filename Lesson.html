@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8"/>
     <title>Lesson</title>
@@ -10,10 +11,9 @@
     <link rel="stylesheet" href="assets/css/canvas.css">
     <link rel="stylesheet" href="assets/css/Lesson.css">
     <link href="assets/css/letter-svg.css" rel="stylesheet">
-
-
 </head>
-<body onload="InitThis();">
+
+<body>
 
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
@@ -49,60 +49,73 @@
                     <a href="#" style="display: inline-block">User</a>
                 </li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
     </div>
 </nav>
 
 <div id="wrapper" class="container-fluid">
 
-    <br/>
 
-    <div id="question-container">
+    <div class="row" align="center">
+        <div class="arrows">
+            <span>
+                <i class="fa fa-angle-left" aria-hidden="true" onclick="MovePreviousQuestion()"></i>
+            </span>
+        </div>
 
-        <div class="row" align="center">
-            <div id="letter-drowing" align="center">
-                <div id="svg"></div>
-                <span onclick="myFunction()">
+        <div id="question-container">
+
+            <div class="row">
+                <div class="progress custom-progress-bar">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3> Next you'll have to draw letter ...</h3>
+            </div>
+
+            <div class="row" align="center">
+                <div id="letter-drowing" align="center">
+                    <div id="svg"></div>
+                    <span onclick="refresh()">
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                 </span>
+                </div>
+            </div>
+
+            <div id="canvas-container" class="row" align="center">
+                <div id="canvas">
+                    <canvas id="myCanvas" class="img-responsive" height="400" width="800"></canvas>
+                </div>
+
+
+            </div>
+
+            <div class="row" id="last-row-buttons" align="center">
+                <button class="btn btn-default" onclick="clearArea()">Clear Area</button>
+                <button class="btn btn-default" onclick="testImage()">Test</button>
             </div>
         </div>
 
-        <div class="row" align="center">
-            <div class="arrows">
-                <span
-                        onclick="javascript:MoveNextQuestion();return false;">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                </span>
-            </div>
-            <div id="canvas">
-                <canvas id="myCanvas" class="img-responsive"></canvas>
-            </div>
-
-
-            <div class="arrows">
-                <span
-                        onclick="javascript:MoveNextQuestion();return false;">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </span>
-            </div>
-
+        <div class="arrows">
+            <span>
+                <i class="fa fa-angle-right" aria-hidden="true" onclick="MoveNextQuestion()"></i>
+            </span>
         </div>
 
-        <br/><br/>
+        <div id="result" align="center">
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
-                <button class="btn btn-default" onclick="javascript:clearArea();return false;">Clear Area</button>
-                <button class="btn btn-default" onclick="javascript:testImage();return false;">Test</button>
-            </div>
         </div>
     </div>
 
-    <div id="result" align="center">
 
-    </div>
 </div>
+
 <footer class="footer">
     <div class="container-fluid">
 
@@ -113,11 +126,9 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" type="text/javascript"></script>
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <script type="text/javascript" src="assets/js/canvas.js"></script>
-<!--<script type="text/javascript" src="assets/js/questions_controller.js"></script>-->
-<script type="text/javascript" src="assets/js/image-recognition.js"></script>
-<script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" type="text/javascript"></script>
 <script src="assets/js/letter-drawing.js" type="text/javascript"></script>
 
 </html>

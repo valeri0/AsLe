@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ae69d3d-d196-4bd2-8643-ffe54b58c6ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/Lesson.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/navbars.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/letter-drawing.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lessons.html" afterPath="$PROJECT_DIR$/ListOfLessons.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/canvas.css" afterPath="$PROJECT_DIR$/assets/css/canvas.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/canvas.js" afterPath="$PROJECT_DIR$/assets/js/canvas.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/questions_controller.js" afterPath="$PROJECT_DIR$/assets/js/questions_controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/tesseract_test.js" afterPath="$PROJECT_DIR$/assets/js/image-recognition.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/lessons.css" afterPath="$PROJECT_DIR$/assets/css/ListOfLessons.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/letterSomething.css" afterPath="$PROJECT_DIR$/assets/css/letter-svg.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/canvas.html" afterPath="$PROJECT_DIR$/Testing Canvas Drawing and Tesseract/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing animation/animation.html" afterPath="$PROJECT_DIR$/Testing animation/animation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/letter.svg" afterPath="$PROJECT_DIR$/assets/img/letter.svg" />
-    </list>
+    <list default="true" id="4ae69d3d-d196-4bd2-8643-ffe54b58c6ab" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,76 +11,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Lesson.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Lesson.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lesson.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="70" column="38" lean-forward="false" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+            <state relative-caret-position="510">
+              <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lesson.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/Lesson.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListOfLessons.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/css/ListOfLessons.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="canvas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/canvas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="questions_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/questions_controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-527">
-              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1510413420273" expanded="true" signature="36:430" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="150:271" ph="..." />
-                <marker date="1510413420273" expanded="false" signature="327:344" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="489:843" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="573:825" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="880:1396" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="924:1067" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1148:1202" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1246:1381" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1433:1949" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1477:1620" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1701:1755" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1799:1934" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="1986:2502" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2030:2173" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2254:2308" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2352:2487" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2539:3055" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2583:2726" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2807:2861" ph="..." />
-                <marker date="1510413420273" expanded="true" signature="2905:3040" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,8 +26,8 @@
       <file leaf-file-name="letter-drawing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/letter-drawing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+            <state relative-caret-position="221">
+              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -130,6 +51,7 @@
       <find>@medi</find>
       <find>User</find>
       <find>stroke</find>
+      <find>style=&quot;fill</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,12 +80,15 @@
         <option value="$PROJECT_DIR$/assets/css/navbars.css" />
         <option value="$PROJECT_DIR$/assets/css/ListOfLessons.css" />
         <option value="$PROJECT_DIR$/ListOfLessons.html" />
-        <option value="$PROJECT_DIR$/assets/img/letter.svg" />
         <option value="$PROJECT_DIR$/assets/css/letter-svg.css" />
-        <option value="$PROJECT_DIR$/assets/js/letter-drawing.js" />
+        <option value="$PROJECT_DIR$/assets/js/canvas.js" />
+        <option value="$PROJECT_DIR$/assets/css/canvas.css" />
         <option value="$PROJECT_DIR$/assets/js/questions_controller.js" />
-        <option value="$PROJECT_DIR$/Lesson.html" />
+        <option value="$PROJECT_DIR$/assets/img/letter.svg" />
+        <option value="$PROJECT_DIR$/assets/img/letter2.svg" />
+        <option value="$PROJECT_DIR$/assets/js/letter-drawing.js" />
         <option value="$PROJECT_DIR$/assets/css/Lesson.css" />
+        <option value="$PROJECT_DIR$/Lesson.html" />
       </list>
     </option>
   </component>
@@ -173,7 +98,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1147" />
     <option name="y" value="-15" />
     <option name="width" value="983" />
@@ -223,16 +148,6 @@
               <item name="AsLe" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AsLe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AsLe" type="462c0819:PsiDirectoryNode" />
-              <item name="Testing animation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AsLe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AsLe" type="462c0819:PsiDirectoryNode" />
-              <item name="Testing Canvas Drawing and Tesseract" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,6 +199,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4ae69d3d-d196-4bd2-8643-ffe54b58c6ab" name="Default" comment="" />
@@ -295,7 +213,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -306,7 +224,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -330,23 +248,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43639">
-          <caret line="2567" column="42" lean-forward="true" selection-start-line="2567" selection-start-column="42" selection-end-line="2567" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/ListOfLessons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upgrade.html" />
     <entry file="file://$PROJECT_DIR$/ListOfLessons.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -484,7 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -492,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -500,7 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -523,65 +421,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/letter.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing animation/animation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/letter-svg.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/questions_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1510413420273" expanded="true" signature="36:430" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="150:271" ph="..." />
-            <marker date="1510413420273" expanded="false" signature="327:344" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="489:843" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="573:825" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="880:1396" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="924:1067" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1148:1202" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1246:1381" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1433:1949" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1477:1620" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1701:1755" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1799:1934" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="1986:2502" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2030:2173" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2254:2308" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2352:2487" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2539:3055" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2583:2726" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2807:2861" ph="..." />
-            <marker date="1510413420273" expanded="true" signature="2905:3040" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/canvas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -594,37 +437,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/letter-drawing.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/image-recognition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/questions_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/letter.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/ListOfLessons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/letter2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="72" lean-forward="false" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/letter-drawing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/canvas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="85" lean-forward="true" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/letter-svg.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/canvas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/Lesson.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lesson.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="70" column="38" lean-forward="false" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        <state relative-caret-position="510">
+          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/ListOfLessons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>

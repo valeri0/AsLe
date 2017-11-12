@@ -2,9 +2,13 @@ var mousePressed = false;
 var lastX, lastY;
 var ctx;
 
-function InitThis() {
+document.addEventListener('DOMContentLoaded', function() {
+   InitCanvas();
+}, false);
+
+function InitCanvas() {
     ctx = document.getElementById('myCanvas').getContext("2d");
-    
+
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
@@ -19,7 +23,27 @@ function InitThis() {
     $('#myCanvas').mouseup(function (e) {
         mousePressed = false;
     });
-	    $('#myCanvas').mouseleave(function (e) {
+    $('#myCanvas').mouseleave(function (e) {
+        mousePressed = false;
+    });
+
+    $('#myCanvas').on('touchstart', function (e) {
+        mousePressed = true;
+        Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, false);
+    });
+
+    $('#myCanvas').on('touchmove', function (e) {
+        e.preventDefault();
+        if (mousePressed) {
+            Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, true);
+        }
+    });
+
+    $('#myCanvas').on('touchend', function (e) {
+        mousePressed = false;
+    });
+
+    $('#myCanvas').on('touchcancel', function (e) {
         mousePressed = false;
     });
 }
