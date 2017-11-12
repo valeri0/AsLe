@@ -1,3 +1,7 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 #wrapper{
     height: calc(100vh - 75px);
     overflow-x: scroll;
@@ -7,13 +11,11 @@ li a i, li a p{
     display: inline-block;
 }
 
-#canvas-container{
-    height: 650px
-}
-
 #letter-drowing{
-    background-color: transparent;
     width: 15%;
+    margin: 2% 0;
+    background-color: transparent;
+
 }
 
 #canvas{
@@ -22,12 +24,64 @@ li a i, li a p{
     padding-right: 5%;
 }
 
+#question-container{
+    width: 70%;
+    display: inline-block;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: .5rem;
+    box-shadow: 0 0 0.625rem -0.125rem #D6DEE6;
+    background-color: white;
+}
+
 .arrows{
+    width: 10%;
     display: inline-block;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 300px;
+    font-size: 250px;
+    color: darkgrey;
+}
+.arrows:hover{
+    color: #8d8d8d;
+}
+
+
+#letter-drowing span i{
+    font-size: 25px;
+    color: darkgrey;
+    transition: 0.70s;
+    margin: 2% 0;
+}
+
+#letter-drowing span i:hover{
+    color: #8d8d8d;
+    transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.custom-progress-bar{
+    margin: 3% 5%;
+}
+
+#myCanvas{
+    border: solid;
+    border-color: #5bc0de;
+    border-radius: .5rem;
+    border-width: 1px;
+}
+
+#last-row-buttons{
+    padding: 3% 0;
 }
 
 
