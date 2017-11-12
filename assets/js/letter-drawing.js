@@ -2,7 +2,7 @@ var letter1 = 'assets/img/letter.svg';
 var letter2 = 'assets/img/letter2.svg';
 
 var letters = [letter1, letter2];
-var correct_answers = [0x4F8D, 0x4E45];
+var correct_answers = [0x4F8D, 0x30BF];
 
 var index = 0;
 
@@ -42,11 +42,13 @@ function MovePreviousQuestion() {
 
 function testImage(){
     ctx = document.getElementById('myCanvas').getContext('2d');
+    $('body').addClass('loading');
 
     Tesseract.recognize(ctx, {
         lang: 'jpn'
     })
    .then(function(result){
+       $('body').removeClass('loading');
         if (result.text.charCodeAt(0) === correct_answers[index]) {
             $('#result').show().html('<h1>' + result.text + ' Correct</h1>')
         }else{
@@ -54,6 +56,7 @@ function testImage(){
         }
     })
     .catch(function(err){
+        $('body').removeClass('loading');
         console.error(err)
     })
 }
