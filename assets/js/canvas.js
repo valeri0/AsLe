@@ -26,6 +26,26 @@ function InitCanvas() {
     $('#myCanvas').mouseleave(function (e) {
         mousePressed = false;
     });
+
+    $('#myCanvas').on('touchstart', function (e) {
+        mousePressed = true;
+        Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, false);
+    });
+
+    $('#myCanvas').on('touchmove', function (e) {
+        e.preventDefault();
+        if (mousePressed) {
+            Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, true);
+        }
+    });
+
+    $('#myCanvas').on('touchend', function (e) {
+        mousePressed = false;
+    });
+
+    $('#myCanvas').on('touchcancel', function (e) {
+        mousePressed = false;
+    });
 }
 
 function Draw(x, y, isDown) {
