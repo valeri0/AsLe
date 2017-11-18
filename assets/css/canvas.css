@@ -5,5 +5,4 @@ body {
 #myCanvas {
     background-color: white;
     border: 4px outset;
-    cursor: crosshair;
 }
