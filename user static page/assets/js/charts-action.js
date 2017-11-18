@@ -8,12 +8,13 @@ google.charts.load('visualization', '1.0', {
 google.charts.setOnLoadCallback(drawChart);
 
 
-var line_chart_uri = ''
-var donut_chart_uri = ''
-var area_chart_uri = ''
 
 
 function drawChart() {
+
+    var area_chart_uri = '';
+    var donut_char_uri = '';
+    var line_chart_uri = '';
 
 
     // Begin Data
@@ -118,13 +119,15 @@ function drawChart() {
 
     google.visualization.events.addListener(a_chart, 'ready', function () {
 
-        area_chart_uri = a_chart.getImageURI();
-
+        let area_chart_uri = a_chart.getImageURI();
     });
 
     google.visualization.events.addListener(d_chart, 'ready', function () {
 
-        donut_chart_uri = d_chart.getImageURI();
+        var donut_chart_uri = d_chart.getImageURI();
+        $('#share_donut_chart_button').attr('href', 'https://www.facebook.com/sharer.php?u=' + donut_char_uri);
+
+        console.log(donut_chart_uri);
 
     });
 
@@ -140,4 +143,8 @@ function drawChart() {
     donut_chart.draw(data_for_donut_chart, options_donut_chart);
     line_chart.draw(data_for_line_chart, options_line_chart);
     // End Drawing
+
+
+    // Load charts URI for share
+
 }
