@@ -5,12 +5,9 @@ google.charts.load('visualization', '1.0', {
 
 
 
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(initialize);
 
-
-
-
-function drawChart() {
+function initialize() {
 
     var area_chart_uri = '';
     var donut_char_uri = '';
@@ -28,19 +25,14 @@ function drawChart() {
         [6, 7],
         [7, 9],
         [8, 10],
-        [9, 1],
-        [10, 1],
-        [11, 9],
-        [12, 1],
-        [13, 4],
-        [14, 2]
+        [9, 1]
 
     ]);
 
 
     var data_for_donut_chart = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Drawn', 25],
+          ['Drawn', 15],
           ['Remaining', 200]
         ]);
 
@@ -49,8 +41,7 @@ function drawChart() {
     var data_for_line_chart = google.visualization.arrayToDataTable([
           ['Week', 'Tries ', 'Successes'],
           ['1', 200, 7],
-          ['2', 54, 2],
-          ['3', 70, 20]
+          ['2', 54, 2]
         ]);
 
     // End Data
@@ -62,7 +53,12 @@ function drawChart() {
         backgroundColor: {
             fill: 'transparent'
         },
-        height: 500
+        height: 500,
+        animation: {
+            "startup": true,
+            duration: 1300,
+            easing: 'out'
+        }
     };
 
 
@@ -78,6 +74,12 @@ function drawChart() {
             top: 25,
             width: "100%",
             height: "100%"
+        },
+
+        animation: {
+            "startup": true,
+            duration: 1300,
+            easing: 'out'
         }
 
     }
@@ -89,7 +91,12 @@ function drawChart() {
             fill: 'transparent'
         },
         height: 500,
-        curveType: 'function'
+        curveType: 'function',
+        animation: {
+            "startup": true,
+            duration: 1300,
+            easing: 'out'
+        }
     };
 
     // End Options
@@ -113,38 +120,90 @@ function drawChart() {
     var line_chart_div = document.getElementById('line_chart');
 
 
-    var a_chart = new google.visualization.AreaChart(area_chart_div);
-    var d_chart = new google.visualization.PieChart(donut_chart_div);
-    var l_chart = new google.visualization.LineChart(line_chart_div);
 
-    google.visualization.events.addListener(a_chart, 'ready', function () {
+    function drawChart() {
 
-        let area_chart_uri = a_chart.getImageURI();
+
+        var a_chart = new google.visualization.AreaChart(area_chart_div);
+        var d_chart = new google.visualization.PieChart(donut_chart_div);
+        var l_chart = new google.visualization.LineChart(line_chart_div);
+
+        google.visualization.events.addListener(a_chart, 'ready', function () {
+
+            let area_chart_uri = a_chart.getImageURI();
+        });
+
+        google.visualization.events.addListener(d_chart, 'ready', function () {
+
+            var donut_chart_uri = d_chart.getImageURI();
+            $('#share_donut_chart_button').attr('href', 'https://www.facebook.com/sharer.php?u=' + donut_char_uri);
+
+            console.log(donut_chart_uri);
+
+        });
+
+        google.visualization.events.addListener(l_chart, 'ready', function () {
+
+            line_chart_uri = l_chart.getImageURI();
+
+        });
+
+
+        // Begin Drawing
+        area_chart.draw(data_for_area_chart, options_area_chart);
+        donut_chart.draw(data_for_donut_chart, options_donut_chart);
+        line_chart.draw(data_for_line_chart, options_line_chart);
+        // End Drawing
+
+
+        // Load charts URI for share
+
+    }
+
+    $('#test_change_charts_values_button').click(function () {
+
+        data_for_area_chart = google.visualization.arrayToDataTable([
+        ['Day', 'Letters drawn correct'],
+        [1, 4],
+        [2, 2],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [6, 7],
+        [7, 9],
+        [8, 10],
+        [9, 1],
+        [10, 1],
+        [11, 9],
+        [12, 1],
+        [13, 4],
+        [14, 2]
+
+        ]);
+
+
+        data_for_donut_chart = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Drawn', 25],
+              ['Remaining', 200]
+            ]);
+
+
+
+        data_for_line_chart = google.visualization.arrayToDataTable([
+              ['Week', 'Tries ', 'Successes'],
+              ['1', 200, 7],
+              ['2', 54, 2],
+              ['3', 70, 20]
+            ]);
+
+
+        drawChart();
+
     });
 
-    google.visualization.events.addListener(d_chart, 'ready', function () {
 
-        var donut_chart_uri = d_chart.getImageURI();
-        $('#share_donut_chart_button').attr('href', 'https://www.facebook.com/sharer.php?u=' + donut_char_uri);
+    drawChart();
 
-        console.log(donut_chart_uri);
-
-    });
-
-    google.visualization.events.addListener(l_chart, 'ready', function () {
-
-        line_chart_uri = l_chart.getImageURI();
-
-    });
-
-
-    // Begin Drawing
-    area_chart.draw(data_for_area_chart, options_area_chart);
-    donut_chart.draw(data_for_donut_chart, options_donut_chart);
-    line_chart.draw(data_for_line_chart, options_line_chart);
-    // End Drawing
-
-
-    // Load charts URI for share
 
 }

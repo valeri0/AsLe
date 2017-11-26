@@ -21,7 +21,7 @@ $(document).ready(function (e){
         $('#tab1').fadeOut('fast',function(){
            $('#tab2').fadeIn('fast')
             
-        drawChart();
+        initialize();
         });
         
     });
@@ -31,7 +31,7 @@ $(document).ready(function (e){
     // redesenarea graficelor cand se schimba dimensiunile 
     $(window).resize(function(){
         
-        drawChart();
+        initialize();
         
     });
 
