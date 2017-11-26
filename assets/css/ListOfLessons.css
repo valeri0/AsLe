@@ -40,3 +40,35 @@
     top: 50%;
     width: 25%;
 }
+
+.edit-delete{
+    position: absolute;
+    width: 100%;
+    left: 85%;
+    bottom: 25%;
+    font-size: 40px;
+}
+.edit-delete i{
+    margin: 0px 10px;
+    color: #6a6a6a;
+}
+
+.edit-delete i:hover{
+    color: black;
+}
+
+@media (max-width: 991px){
+    .edit-delete{
+    position: absolute;
+    left: 80%;
+    bottom: 25%;
+    font-size: 33px;
+    }
+}
+
+.card{
+    filter: opacity(90%);
+}
+.card:hover{
+    filter: opacity(100%);
+}

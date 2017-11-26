@@ -1,6 +1,6 @@
-var letter1 = 'assets/img/letter.svg';
-var letter2 = 'assets/img/letter2.svg';
-
+var letter1 = 'assets/js/no.json';
+var letter2 = 'assets/js/so.json';
+var animation
 var letters = [letter1, letter2];
 var correct_answers = [0x4F8D, 0x30BF];
 
@@ -8,35 +8,36 @@ var index = 0;
 
 window.onload = myFunction(letter1);
 
-function myFunction(svg_path){
-        document.getElementById('svg').innerHTML = "";
-        new Vivus('svg', {
-            type: 'oneByOne',
-            duration: 400,
-            file: svg_path
-            },
-            function(obj){
-                setTimeout(function () {
-                    obj.el.classList.add('finished');
-                }, 500)
-        });
-    }
+function myFunction(animation_json){
+    animation = bodymovin.loadAnimation({
+    container: document.getElementById('bm'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: true,
+    rendererSettings: {
+        progresiveLoad: true,
+        scaleMode: 'noScale'
+    },
+    path: animation_json
+    })
+}
 
 function refresh(){
+    document.getElementById('bm').innerHTML = ''
     myFunction(letters[index])
 }
 
 function MoveNextQuestion() {
     if (index < letters.length - 1) {
         index++;
-        myFunction(letters[index])
+        refresh();
     }
 }
 
 function MovePreviousQuestion() {
     if (index > 0) {
         index--;
-        myFunction(letters[index])
+        refresh();
     }
 }
 
