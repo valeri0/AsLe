@@ -1,6 +1,13 @@
+.progress-bar-success{
+    background-color: #007B7B;
+}
 
 .content{
     font-family: 'Roboto', sans-serif;
+}
+
+.content > .row{
+    cursor: pointer;
 }
 
 .main-content{

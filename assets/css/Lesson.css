@@ -100,4 +100,6 @@ li a i, li a p{
     padding: 3% 0;
 }
 
-
+.progress-bar{
+    background-color: #3FBABA;
+}
