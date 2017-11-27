@@ -53,7 +53,7 @@ function initialize() {
         backgroundColor: {
             fill: 'transparent'
         },
-        height: 500,
+        height: 220,
         animation: {
             "startup": true,
             duration: 1300,
@@ -64,7 +64,7 @@ function initialize() {
 
     var options_donut_chart = {
         title: 'Total number of symbols drawn',
-        height: 400,
+        height: 250,
         backgroundColor: {
             fill: 'transparent'
         },
@@ -90,7 +90,7 @@ function initialize() {
         backgroundColor: {
             fill: 'transparent'
         },
-        height: 500,
+        height: 250,
         curveType: 'function',
         animation: {
             "startup": true,

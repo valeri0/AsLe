@@ -7,10 +7,12 @@
     <title>AsLe</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lessons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <link href="../assets/css/navbars.css" rel="stylesheet">
 
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,14 +21,6 @@
 </head>
 
 <body>
-    <style>
-        html,
-        body {
-            overflow-x: hidden;
-            height: auto;
-        }
-
-    </style>
 
     <div class="wrapper">
         <div class="sidebar" data-background-color="white" data-active-color="danger">
@@ -98,21 +92,32 @@
 
                                             </div>
                                         </div>
-                                        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
 
-                                            <div class="btn-group" role="group">
-                                                <button type="button" id="button_details" class="btn btn-primary"><span class="fa fa-id-card-o fa-3x" aria-hidden="true" ></span>
-                                                    <div class="hidden-xs">About</div>
-                                                </button>
-                                            </div>
 
-                                            <div class="btn-group" role="group">
-                                                <button type="button" id="button_stats" class="btn btn-default"><span class="fa fa-line-chart fa-3x" aria-hidden="true"></span>
-                                                    <div class="hidden-xs">Stats</div>
+                                        <div style="text-align: center">
+
+                                            <div class="btn-group">
+
+                                                <div class="btn-group btn-group-lg" role="group">
+
+
+                                                    <button type="button" id="button_details" class="btn my_button"><i class="fa fa-id-card-o fa-1x" style="color: white"></i>
+                                                    About
                                                 </button>
+
+
+                                                    <button type="button" id="button_stats" class="btn my_button">
+                                                    <i class="fa fa-pie-chart fa-1x" style="color: white"></i>Stats
+                                                </button>
+
+
+                                                </div>
+
+
                                             </div>
 
                                         </div>
+
 
                                     </div>
 
@@ -131,7 +136,23 @@
                                 <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                                     <div class="card">
                                         <div class="content">
-                                            <h1>Detalii</h1>
+                                            <div style="text-align: center">
+
+                                                <h4 style="text-align: left; font-weight: bold;">Your details</h4>
+                                                <div class="user_details">
+                                                    <h5>First name: <span> Alexandru</span></h5>
+                                                    <h5>Last name: <span>Straton </span></h5>
+                                                    <h5>Date of birth: <span>2nd January 1999</span></h5>
+                                                    <h5>Country: <span> Romania</span></h5>
+
+                                                    <h5>City: <span> Iasi</span></h5>
+                                                    <h5>Occupation: <span> still in school</span></h5>
+
+                                                    <h5>Registered at: <span> 1st Novemeber 2017</span></h5>
+
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,9 +164,9 @@
 
                                             <div style="text-align: center">
 
-                                                <h3 style="margin-bottom: 20px">Esti nivelul <span id="title_belt_color" style="color: rgb(0, 1, 186)">albastru</span></h3>
+                                                <h4 style="margin-bottom: 20px; font-weight: bold;">You are level <span id="title_belt_color" style="color: #000099">blue</span></h4>
 
-                                                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve" version="1.1" id="svg2" height="300px">
+                                                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve" version="1.1" id="svg2" height="139px">
                                                 
                                                 <metadata id="metadata8">
                                                     <rdf:RDF>
@@ -186,16 +207,16 @@
                                                                 <path id="path46" style="fill:#99aab5;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 0,0 -6.692,11.381 -6.692,12.36 0,1 0.874,1.737 0.874,1.737 L 0.943,1.524 0,0 Z" />
                                                             </g>
                                                             <g transform="translate(7,14)" id="g48">
-                                                                <path id="path50" style="fill:rgb(0, 1, 186);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 0,0 5,-2 11,-2 6,0 11,2 11,2 l 0,-3 C 22,-3 18,-5 11,-5 4,-5 0,-3 0,-3 l 0,3 z" />
+                                                                <path id="path50" style="fill:rgb(0, 0, 153);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 0,0 5,-2 11,-2 6,0 11,2 11,2 l 0,-3 C 22,-3 18,-5 11,-5 4,-5 0,-3 0,-3 l 0,3 z" />
                                                             </g>
                                                             <g transform="translate(21,12)" id="g52">
-                                                                <path id="path54" style="fill:rgb(0, 1, 186);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 0,0 -2,1 -3,1 -1,0 -3,-1 -3,-1 0,0 -1,0 -1,-1 0,-1 1,-2 1,-2 0,0 2,-1 3,-1 1,0 3,1 3,1 0,0 1,1 1,2 0,1 -1,1 -1,1" />
+                                                                <path id="path54" style="fill:rgb(0, 0, 153);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 0,0 -2,1 -3,1 -1,0 -3,-1 -3,-1 0,0 -1,0 -1,-1 0,-1 1,-2 1,-2 0,0 2,-1 3,-1 1,0 3,1 3,1 0,0 1,1 1,2 0,1 -1,1 -1,1" />
                                                             </g>
                                                             <g transform="translate(12,3)" id="g56">
-                                                                <path id="path58" style="fill:rgb(0, 1, 186);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 3,-1 c 0,0 1,5 3,7 L 4,9 C 4,9 1,5 0,0" />
+                                                                <path id="path58" style="fill:rgb(0, 0, 153);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 3,-1 c 0,0 1,5 3,7 L 4,9 C 4,9 1,5 0,0" />
                                                             </g>
                                                             <g transform="translate(24,3)" id="g60">
-                                                                <path id="path62" style="fill:rgb(0, 1, 186);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -3,-1 c 0,0 -1,5 -3,7 l 2,3 c 0,0 3,-4 4,-9" />
+                                                                <path id="path62" style="fill:rgb(0, 0, 153);fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -3,-1 c 0,0 -1,5 -3,7 l 2,3 c 0,0 3,-4 4,-9" />
                                                             </g>
                                                         </g>
                                                     </g>
@@ -226,7 +247,7 @@
 
                                 <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                                     <div class="card" style="width: 100%">
-                                        <div class="content" style="width: 100%">
+                                        <div class="content" style="width: 100%; height: 300px;">
 
                                             <div style="text-align: center;">
                                                 <button id="test_change_charts_values_button" type="button" class="btn btn-lg">
@@ -236,16 +257,15 @@
 
                                             <div id="area_chart"></div>
 
+
                                             <div style="text-align:center">
-
-
-                                                <button id="share-area-chart-button" type="button" class="btn btn-facebook btn-lg"><i class="fa fa-facebook fa-2"></i>
-                                                Share on facebook
-                                                
-                                                </button>
-
+                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-left: 20%">
+                                                    <a href="#" class="a2a_button_google_plus" data-toggle="tooltip" title="Share on GooglePlus!"></a>
+                                                    <a href="#" class="a2a_button_twitter" data-toggle="tooltip" title="Share on Twitter!"></a>
+                                                    <a href="#" class="a2a_button_facebook" data-toggle="tooltip" title="Share on Facebook!"></a>
+                                                    <a href="#" class="a2a_button_whatsapp" data-toggle="tooltip" title="Share on Whatsapp!"></a>
+                                                </div>
                                             </div>
-
 
                                         </div>
                                     </div>
@@ -259,11 +279,12 @@
                                             <div id="donut_chart"></div>
 
                                             <div style="text-align:center">
-
-                                                <button id="share-donut-chart-button" type="button" class="btn btn-facebook btn-lg"><i class="fa fa-facebook fa-2"></i>
-                                                Share on facebook
-                                                
-                                                </button>
+                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-left: 10%">
+                                                    <a href="#" class="a2a_button_google_plus" data-toggle="tooltip" title="Share on GooglePlus!"></a>
+                                                    <a href="#" class="a2a_button_twitter" data-toggle="tooltip" title="Share on Twitter!"></a>
+                                                    <a href="#" class="a2a_button_facebook" data-toggle="tooltip" title="Share on Facebook!"></a>
+                                                    <a href="#" class="a2a_button_whatsapp" data-toggle="tooltip" title="Share on Whatsapp!"></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -274,13 +295,16 @@
                                         <div class="content" style="width: 100%">
                                             <div id="line_chart"></div>
 
-                                            <button id="share-line-chart-button" type="button" class="btn btn-facebook btn-lg"><i class="fa fa-facebook fa-2"></i>
-                                                Share on facebook
-                                                
-                                                </button>
 
                                             <div style="text-align:center">
+                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                                    <a href="#" class="a2a_button_google_plus" data-toggle="tooltip" title="Share on GooglePlus!"></a>
+                                                    <a href="#" class="a2a_button_twitter" data-toggle="tooltip" title="Share on Twitter!"></a>
+                                                    <a href="#" class="a2a_button_facebook" data-toggle="tooltip" title="Share on Facebook!"></a>
+                                                    <a href="#" class="a2a_button_whatsapp" data-toggle="tooltip" title="Share on Whatsapp!"></a>
+                                                </div>
                                             </div>
+
 
                                         </div>
                                     </div>
@@ -323,6 +347,8 @@
 <script src="assets/js/tab-action.js"></script>
 
 <script src="assets/js/level-of-belt-action.js"></script>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 
 
 </html>

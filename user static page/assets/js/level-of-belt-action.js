@@ -8,19 +8,22 @@ $(document).ready(function () {
     $('#test_button_belt_level').click(function () {
 
 
-        if ("rgb(0, 1, 186)" == $('#title_belt_color').css('color')) {
+        if ("rgb(0, 0, 153)" == $('#title_belt_color').css('color')) {
 
-            $('#title_belt_color').css('color', 'rgb(215, 218, 0)');
-            $('#title_belt_color').text('galben');
+            $('#title_belt_color').css('color', 'rgb(218, 165, 32)');
+            $('#title_belt_color').text('yellow');
 
-            $('#path50').css("fill", "rgb(215, 218, 0)");
-            $('#path54').css("fill", "rgb(215, 218, 0");
-            $('#path58').css("fill", "rgb(215, 218, 0");
-            $('#path62').css("fill", "rgb(215, 218, 0");
+            $('#path50').css("fill", "rgb(218, 165, 32)");
+            $('#path54').css("fill", "rgb(218, 165, 32)");
+            $('#path58').css("fill", "rgb(218, 165, 32)");
+            $('#path62').css("fill", "rgb(218, 165, 32)");
 
 
         }
 
     });
+    
+    
+    $('[data-toggle="tooltip"]').tooltip();
 
 });
