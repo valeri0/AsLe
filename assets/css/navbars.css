@@ -24,6 +24,10 @@ div.sidebar-wrapper ul.nav li a i{
     background-color: #83dddd;
 }
 
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a{
+    color: #006060;
+}
+
 div nav #mainNavBar ul.nav.navbar-right li :hover{
     color:black;
 }
@@ -46,10 +50,6 @@ div nav #mainNavBar ul.nav.navbar-right li :hover{
         margin-right: 10px;
         line-height: 26px;
         color:#006060;
-    }
-
-    i{
-        color: #006060;
     }
 
     li:not(.active) > a, .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
