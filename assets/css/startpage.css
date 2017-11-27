@@ -1,10 +1,12 @@
-body,
-html {
+body{
     background-image: url(../img/bgstart.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Roboto' ,sans-serif;
+    font-weight: 500;
 }
+
 
 navbar-transparent {
     background: none;
@@ -47,3 +49,7 @@ navbar-transparent {
         width: 30%;
     }
 }
+.social-media-login:hover{
+    filter: contrast(150%)
+}
+
