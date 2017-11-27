@@ -4,32 +4,63 @@ body {
 .sidebar .sidebar-wrapper{
     font-family: 'Roboto', sans-serif;
     position: fixed;
-}
-.sidebar-wrapper p{
-    font-size: 16px !important;
+    background-color: #6bbfbf;
 }
 
-.nav>li:hover{
-    background-color: whitesmoke;
+div.sidebar-wrapper div.logo a.simple-text{
+    color: white !important;
+}
+
+div.sidebar-wrapper ul.nav li a p{
+    color: white;
+    font-size:16px;
+}
+div.sidebar-wrapper ul.nav li a i{
+    color: white;
+    font-size:20px;
+}
+
+.sidebar-wrapper .nav>li:hover{
+    background-color: #83dddd;
+}
+
+div nav #mainNavBar ul.nav.navbar-right li :hover{
+    color:black;
 }
 
 @media (max-width: 992px) {
     .navbar .container-fluid{
         background-color: white;
     }
-    .sidebar .nav i, .off-canvas-sidebar .nav i.user{
+    div.sidebar-wrapper ul.nav li a p{
+        font-size: 14px;
+        margin-top: 7px;
+        margin-right: 10px;
+        line-height: 26px;
+        color:#006060;
+    }
+
+    div.sidebar-wrapper ul.nav li a i{
         font-size: 18px;
         margin-top: 7px;
         margin-right: 10px;
         line-height: 26px;
-        color: #EB5E28;
+        color:#006060;
+    }
+
+    i{
+        color: #006060;
     }
 
     li:not(.active) > a, .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
-    color: #af3c05;
+    color:#006060;
     font-size: 16px;
     font-weight: 600;
     }
+
+    .sidebar-wrapper .nav>li:hover{
+    background-color: transparent;
+}
 
 }
 
