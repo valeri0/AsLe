@@ -1,14 +1,24 @@
 var letter1 = 'assets/js/no.json';
 var letter2 = 'assets/js/so.json';
-var animation
+var animation;
 var letters = [letter1, letter2];
-var correct_answers = [0x4F8D, 0x30BF];
+var correct_answers = [0x306E, 0x305D];
 
 var index = 0;
 
-window.onload = myFunction(letter1);
+window.onload = InitAnimation(letter1);
 
-function myFunction(animation_json){
+var svg_success = `<svg class="svg-success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <circle class="success_circle" cx="26" cy="26" r="25" fill="none" />
+  <path class="success_check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+</svg>`;
+
+var svg_fail = `<svg class="svg-fail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <circle class="fail_circle" cx="26" cy="26" r="25" fill="none" />
+  <path class="fail_check" fill="none" d="M16 16 36 36 M36 16 16 36" />
+</svg>`;
+
+function InitAnimation(animation_json){
     animation = bodymovin.loadAnimation({
     container: document.getElementById('bm'),
     renderer: 'svg',
@@ -19,16 +29,20 @@ function myFunction(animation_json){
         scaleMode: 'noScale'
     },
     path: animation_json
-    })
+    });
+
+    $('#response-modal').modal({ show: false})
 }
 
 function refresh(){
-    document.getElementById('bm').innerHTML = ''
-    myFunction(letters[index])
+    document.getElementById('bm').innerHTML = '';
+    InitAnimation(letters[index]);
+    clearArea();
 }
 
 function MoveNextQuestion() {
     if (index < letters.length - 1) {
+        forgetCanvasStates();
         index++;
         refresh();
     }
@@ -36,6 +50,7 @@ function MoveNextQuestion() {
 
 function MovePreviousQuestion() {
     if (index > 0) {
+        forgetCanvasStates();
         index--;
         refresh();
     }
@@ -51,9 +66,11 @@ function testImage(){
    .then(function(result){
        $('body').removeClass('loading');
         if (result.text.charCodeAt(0) === correct_answers[index]) {
-            $('#result').show().html('<h1>' + result.text + ' Correct</h1>')
+            $('#result').show().html('<h1>' + result.text + ' Correct</h1>' + svg_success);
+            $('#response-modal').modal('show');
         }else{
-            $('#result').show().html('<h1>' + result.text + ' Incorrect</h1>')
+            $('#result').show().html('<h1>' + result.text + ' Wrong</h1>' + svg_fail);
+            $('#response-modal').modal('show');
         }
     })
     .catch(function(err){

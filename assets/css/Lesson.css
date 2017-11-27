@@ -69,6 +69,22 @@ li a i, li a p{
   transform: rotate(180deg);
 }
 
+#last-row-buttons button, span{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#last-row-buttons span i{
+    font-size: 25px;
+    color: darkgrey;
+    transition: 0.70s;
+    margin: 2% 0;
+}
+
+#last-row-buttons span i:hover{
+    color: #8d8d8d;
+}
+
 .custom-progress-bar{
     margin: 3% 5%;
 }
