@@ -89,3 +89,12 @@
     border-color: black;
     color: black;
 }
+
+#panel-body p{
+    font-weight: bold;
+}
+
+.uploaded-files p, upladed-files i{
+    display: inline-block;
+    margin: 0px 5px;
+}
