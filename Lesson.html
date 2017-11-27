@@ -82,11 +82,10 @@
 
             <div class="row" align="center">
                 <div id="letter-drowing" align="center">
-                    <!--<div id="svg"></div>-->
                     <div id="bm"></div>
                     <span onclick="refresh()">
-                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                </span>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                     </span>
                 </div>
             </div>
 
@@ -100,6 +99,15 @@
 
             <div class="row" id="last-row-buttons" align="center">
                 <button class="btn btn-default" onclick="clearArea()">Clear Area</button>
+
+                <span data-toggle="tooltip" title="Undo" onclick="undo()">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                </span>
+
+                <span data-toggle="tooltip" title="Redo" onclick="redo()">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                </span>
+
                 <button class="btn btn-default" onclick="testImage()">Test</button>
             </div>
         </div>
@@ -110,9 +118,24 @@
             </span>
         </div>
 
-        <div class="modal"></div>
-        <div id="result" align="center">
+        <div class="custom-modal"></div>
 
+        <!-- Response Modal -->
+        <div id="response-modal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body" id="result" align="center">
+
+              </div>
+              <div class="modal-footer">
+                  <div class="text-center">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 
@@ -127,13 +150,12 @@
 
 
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" type="text/javascript"></script>
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <script type="text/javascript" src="assets/js/canvas.js"></script>
 <script src="assets/js/bodymovin.js"></script>
 <script src="assets/js/letter-drawing.js" type="text/javascript"></script>
-<!--<script src="assets/js/animation.js"></script>-->
 
 </html>
