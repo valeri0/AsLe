@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="project,infoiasi,cliw,web">
+    <title>AsLe - Scholarly Raport</title>
+    <link rel="stylesheet" href="http://scholarly.vernacular.io/scholarly.css">
+</head>
+
+<body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+        <p class="title">AsLe - Scholarly Raport</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+        <h1>AsLe</h1>
+        <section>
+            <ol>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/valeri0" typeof="schema:Person">
+                        <span property="schema:givenName">Mihăilă</span>
+                        <span property="schema:familyName">Valerio</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+            </sup>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/TudosaOvidiu" typeof="schema:Person">
+                        <span property="schema:givenName">Tudosă</span>
+                        <span property="schema:familyName">Ovidiu</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/eduard-tuduri" typeof="schema:Person">
+                        <span property="schema:givenName">Tuduri</span>
+                        <span property="schema:familyName">Eduard  Gabriel</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+            </ol>
+            <ol>
+                <a href="https://www.info.uaic.ro/bin/Main/">
+                    <span property="schema:name">Facultatea de Informatica Iasi , Universitatea Alexandru Ioan Cuza</span>
+                </a>
+            </ol>
+        </section>
+
+        <section typeof="sa:Abstract" id="abstract">
+            <h2>Cuprins</h2>
+            <p>1.Concepte privind designul</p>
+            <p>2.Maniera de interacțiune cu utilizatorul</p>
+            <p>3.Maniera de folosire a sistemului de management al codului sursă</p>
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>1.Concepte privind designul</h2>
+            <aside typeof="schema:WPSideBar">
+                <p>
+                    Aplicația este una de tip educațional, ea fiind destinată utilizatorilor ce doresc să învețe scrierea simbolurilor japoneza, progresul acestora fiind contorizat prin diferite metode de vizualizare a datelor.
+                </p>
+
+                <p>
+                    Fiind un tool de învățare, designul acesteia este unul minimalist, conținutul fiind cât se poate de intuitiv.
+                </p>
+
+                <p>
+                    Elementele cu care interacționează utilizatorul, oferă diverse animații, gesturi pentru a putea face experiența sa una cât se poate de ușoară. De exemplu, dacă utilizatorul duce cursorul peste un buton, acesta își va schimba nuanța de culoare pentru a evidenția poziția sa pe pagină.
+
+                </p>
+                <p>
+                    După ce trece de partea de înregistrare/logare, utilizatorul are la dispoziție o listă de lecții, fiecare lecție reprezentând un simbol japonez ce poate fi desenat.
+                </p>
+                <img src="Start.PNG" alt="..">
+                <img src="ListOfLessons.PNG" alt="">
+
+                <p>
+                    O lecție este constituită din o animație ce prezintă utilizatorul cum trebuie desenat simbolul și un chenar unde acesta poate să deseneze folosind mouse-ul, degetul, mobile stylus etc. (în funcție de dispozitivul său), având la dispoziție butonul "Submit" sau "Clear Test".
+                </p>
+                <img src="Lesson.PNG" alt="..">
+
+                <p>
+                    După cum am spus, utilizatorul are o pagină de profil unde poate să-și vizualizeze progresul redat de diferite chart-uri sau chiar de "nivelul" său, care este reprezentat de un kimono, culoarea centurii marcând nivelul curent.
+
+                    <img src="UserStatsPage.PNG" alt="..">
+                    <img src="UserAboutPage.PNG" alt="..">
+                </p>
+
+                <p> Pentru a face aplicația extensibilă, am recurs la o pagină destinată unui administrator care pune la dispoziția acestuia posibilitatea editării,ștergerii și creării
+                </p>
+
+                <img src="AdminLessonsList.PNG" alt="..">
+                <img src="AdminUpload.PNG" alt="..">
+            </aside>
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>2.Maniera de interacțiune cu utilizatorul</h2>
+            <aside typeof="schema:WPSideBar">
+                <p>
+                    Aplicația oferă feedback acțiunilor utilizatorului, marcând dacă acesta a desenat corect sau nu un simbol japonez, printr-o notificare după ce se procesează desenul acestuia.
+
+                </p>
+                <p>
+                    Activitatea utilizatorului este salvată și procesată, redând statistici pe baza acestora.
+
+                </p>
+
+            </aside>
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>
+                3.Maniera de folosire a sistemului de management al codului sursă
+            </h2>
+            <p>
+                Codul sursă a fost gestionat folosind sistemul de versionare GIT, unde am putut stoca tot ce am lucrat fiecare local, fiecare lucrând la câte o componentă diferită.
+            <p>
+            
+                Am avut posiblitatea de a reveni la o versiune anterioară a proiectului și de a contoriza cât s-a lucrat și cine a lucrat pe fiecare componentă, într-un final împreunând toate componentele în același proiect.
+            </p>
+
+        </section>
+    </article>
+
+</body>
+
+</html>
