@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/navbars.css" rel="stylesheet">
     <link href="assets/css/admin-upload.css" rel="stylesheet">
+    <link href="assets/css/content.css" rel="stylesheet">
 
 </head>
 <body>
@@ -47,73 +46,73 @@
     </div>
 </div>
 
+<nav class="navbar">
+    <div class="field">
+        <i class="fa fa-user-circle user" aria-hidden="true"></i>
+        <a href="user%20static%20page/profile.html" style="display: inline-block">User</a>
+    </div>
+</nav>
+
 <div class="main-panel">
 
-    <nav class=" navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+    <!--<nav class=" navbar navbar-default">-->
+    <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--</button>-->
+    <!--</div>-->
 
-            <div class="collapse navbar-collapse" id="mainNavBar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <i class="fa fa-user-circle user" aria-hidden="true"></i>
-                        <a href="#" style="display: inline-block">Admin</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!--<div class="collapse navbar-collapse" id="mainNavBar">-->
+    <!--<ul class="nav navbar-nav navbar-right">-->
+    <!--<li>-->
+    <!--<i class="fa fa-user-circle user" aria-hidden="true"></i>-->
+    <!--<a href="#" style="display: inline-block">Admin</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</nav>-->
 
     <div class="main-content">
         <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                    <div class="card">
-                        <div class="content">
-                            <form>
-                                <div class="form-group">
-                                    <label for="lesson-title">Lesson title:</label>
-                                    <input type="text" class="form-control" id="lesson-title">
-                                </div>
-                                <div class="form-group">
-                                    <label for="leson-description">Lesson description:</label>
-                                    <input type="text" class="form-control" id="description">
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><strong>Upload letter json</strong>
-                                    </div>
-                                    <div class="panel-body" id="panel-body">
-
-                                        <h4>Select files from your computer</h4>
-                                        <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-                                            <div class="form-inline">
-                                                <div class="form-group">
-                                                    <input type="file" name="files[]" id="js-upload-files" multiple>
-                                                </div>
-                                                <button type="submit" class="btn btn-sm btn-primary"
-                                                        id="js-upload-submit">Upload files
-                                                </button>
-                                            </div>
-                                        </form>
-
-                                        <h4>Or drag and drop files below</h4>
-                                        <div class="upload-drop-zone" id="drop-zone">
-                                            Just drag and drop files here
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </form>
+            <div class="card">
+                <div class="content">
+                    <form>
+                        <div class="form-group">
+                            <label for="lesson-title">Lesson title:</label>
+                            <input type="text" class="form-control" id="lesson-title">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="leson-description">Lesson description:</label>
+                            <input type="text" class="form-control" id="description">
+                        </div>
+                        <div class="upload-panel">
+                            <div class="panel-heading"><strong>Upload letter json</strong>
+                            </div>
+
+                            <div class="panel-body" id="panel-body">
+
+                                <h4>Select files from your computer</h4>
+                                <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+                                    <label class="custom-button" id="upload-button">
+                                        <input type="file" onchange="showFileInPage(event)"/>
+                                        <i class="fa fa-upload" aria-hidden="true"></i>Custom Upload
+                                    </label>
+                                </form>
+
+                                <h4>Or drag and drop files below</h4>
+                                <div class="upload-drop-zone" id="drop-zone">
+                                    Just drag and drop files here
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="submit" class="custom-button">Submit</button>
+                    </form>
                 </div>
             </div>
 
