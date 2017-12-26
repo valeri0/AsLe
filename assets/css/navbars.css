@@ -29,6 +29,17 @@ ul {
     top: 50%;
     transform: translateY(-50%);
 }
+
+.left-field{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+}
+
 .sidebar-wrapper {
     position: fixed;
     width: 20%;

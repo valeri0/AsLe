@@ -7,7 +7,6 @@ var state_index = 0;
 document.addEventListener('DOMContentLoaded', function() {
    InitCanvas();
    addCanvasState();
-   $('[data-toggle="tooltip"]').tooltip();
 }, false);
 
 function addCanvasState(){
@@ -43,51 +42,51 @@ function InitCanvas() {
     ctx = document.getElementById('myCanvas').getContext("2d");
 
     /* Mouse Input */
-    $('#myCanvas').mousedown(function (e) {
+    document.getElementById('myCanvas').addEventListener('mousedown', function (e) {
         mousePressed = true;
-        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
-    });
+        Draw(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false);
+    }, false);
 
-    $('#myCanvas').mousemove(function (e) {
+    document.getElementById('myCanvas').addEventListener('mousemove', function (e) {
         if (mousePressed) {
-            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+            Draw(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
         }
-    });
+    }, false);
 
-    $('#myCanvas').mouseup(function (e) {
+    document.getElementById('myCanvas').addEventListener('mouseup', function (e) {
         if (mousePressed){
             addCanvasState();
         }
         mousePressed = false;
-    });
+    }, false);
 
-    $('#myCanvas').mouseleave(function (e) {
+    document.getElementById('myCanvas').addEventListener('mouseleave', function (e) {
         if (mousePressed){
             addCanvasState();
         }
         mousePressed = false;
-    });
+    }, false);
 
     /* Touch Input */
-    $('#myCanvas').on('touchstart', function (e) {
+    document.getElementById('myCanvas').addEventListener('touchstart', function (e) {
         mousePressed = true;
-        Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, false);
-    });
+        Draw(e.originalEvent.touches[0].pageX - this.offsetLeft, e.originalEvent.touches[0].pageY - this.offsetTop, false);
+    }, false);
 
-    $('#myCanvas').on('touchmove', function (e) {
+    document.getElementById('myCanvas').addEventListener('touchmove', function (e) {
         e.preventDefault();
         if (mousePressed) {
-            Draw(e.originalEvent.touches[0].pageX - $(this).offset().left, e.originalEvent.touches[0].pageY - $(this).offset().top, true);
+            Draw(e.originalEvent.touches[0].pageX - this.offsetLeft, e.originalEvent.touches[0].pageY - this.offsetTop, true);
         }
-    });
+    }, false);
 
-    $('#myCanvas').on('touchend', function (e) {
+    document.getElementById('myCanvas').addEventListener('touchend', function (e) {
         mousePressed = false;
-    });
+    }, false);
 
-    $('#myCanvas').on('touchcancel', function (e) {
+    document.getElementById('myCanvas').addEventListener('touchcancel', function (e) {
         mousePressed = false;
-    });
+    }, false);
 }
 
 function Draw(x, y, isDown) {

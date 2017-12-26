@@ -30,8 +30,6 @@ function InitAnimation(animation_json){
     },
     path: animation_json
     });
-
-    $('#response-modal').modal({ show: false})
 }
 
 function refresh(){
@@ -58,23 +56,24 @@ function MovePreviousQuestion() {
 
 function testImage(){
     ctx = document.getElementById('myCanvas').getContext('2d');
-    $('body').addClass('loading');
+    document.body.classList.add('loading');
 
     Tesseract.recognize(ctx, {
         lang: 'jpn'
     })
    .then(function(result){
-       $('body').removeClass('loading');
+       console.log(result);
+       document.body.classList.remove('loading');
         if (result.text.charCodeAt(0) === correct_answers[index]) {
-            $('#result').show().html('<h1>' + result.text + ' Correct</h1>' + svg_success);
-            $('#response-modal').modal('show');
+            document.getElementById('result').innerHTML = '<h1>' + result.text + ' Correct</h1>' + svg_success;
+            openModal();
         }else{
-            $('#result').show().html('<h1>' + result.text + ' Wrong</h1>' + svg_fail);
-            $('#response-modal').modal('show');
+            document.getElementById('result').innerHTML = '<h1>' + result.text + ' Wrong</h1>' + svg_fail;
+            openModal();
         }
     })
     .catch(function(err){
-        $('body').removeClass('loading');
+        document.body.classList.remove('loading');
         console.error(err)
     })
 }
