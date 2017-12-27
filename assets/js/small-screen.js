@@ -1,13 +1,15 @@
-$(document).ready(function (){
-        if ($(window).width()<=650){
+document.addEventListener('DOMContentLoaded', function (){
+        if (window.innerWidth <= 650){
             rotate_phone();
         }
-    });
-    function rotate_phone() {
-            document.getElementById('rt').classList.add('rotate');
+    }, false);
+
+function rotate_phone() {
+    document.getElementById('rt').classList.add('rotate');
+}
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 650) {
+        rotate_phone();
     }
-    $( window ).resize(function() {
-        if ($(window).width() <= 650) {
-            rotate_phone()
-        }
-});
+}, false);
