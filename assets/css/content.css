@@ -28,7 +28,7 @@ a {
     position: relative;
     height: calc(100vh - 75px);
     overflow-x: scroll;
-    padding-top: 10%;
+    padding-top: 85px;
 }
 
 .card {
@@ -41,20 +41,12 @@ a {
     border-radius: 10px;
 }
 
-.card-admin{
-    position: relative;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
 
 .round-img {
     border-radius: 50%;
     width: 75px;
     height: 75px;
-    border: dotted;
+    border: dotted black;
     display: inline-block;
     float: left;
     margin: 10px 10px;

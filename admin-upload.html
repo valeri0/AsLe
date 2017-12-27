@@ -10,7 +10,7 @@
     <link href="assets/css/content.css" rel="stylesheet">
 
 </head>
-<body>
+<body onload="Init()">
 
 
 <div class="sidebar" data-background-color="white" data-active-color="danger">
@@ -21,6 +21,8 @@
                 AsLe
             </a>
         </div>
+
+        <hr>
 
         <ul class="nav">
             <li>
@@ -55,45 +57,37 @@
 
 <div class="main-panel">
 
-    <!--<nav class=" navbar navbar-default">-->
-    <!--<div class="container-fluid">-->
-    <!--<div class="navbar-header">-->
-    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">-->
-    <!--<span class="icon-bar"></span>-->
-    <!--<span class="icon-bar"></span>-->
-    <!--<span class="icon-bar"></span>-->
-    <!--</button>-->
-    <!--</div>-->
-
-    <!--<div class="collapse navbar-collapse" id="mainNavBar">-->
-    <!--<ul class="nav navbar-nav navbar-right">-->
-    <!--<li>-->
-    <!--<i class="fa fa-user-circle user" aria-hidden="true"></i>-->
-    <!--<a href="#" style="display: inline-block">Admin</a>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</nav>-->
-
     <div class="main-content">
         <div class="container-fluid">
 
             <div class="card">
                 <div class="content">
-                    <form>
+                    <form id="form">
                         <div class="form-group">
                             <label for="lesson-title">Lesson title:</label>
-                            <input type="text" class="form-control" id="lesson-title">
+                            <input type="text" class="lesson-input" id="lesson-title">
                         </div>
-                        <div class="form-group">
-                            <label for="leson-description">Lesson description:</label>
-                            <input type="text" class="form-control" id="description">
+                        <div id="exercises-description">
+                            <div class="form-group exercise-description">
+                                <div class="ex-element">
+                                    <label>Letter 1:</label>
+                                    <input type="text" class="exercises-input" id="letter">
+                                </div>
+                                <div class="ex-element">
+                                    <label>Letter 1 hex:</label>
+                                    <input type="text" class="exercises-input" id="hex">
+                                </div>
+
+                            </div>
                         </div>
+                        <div>
+                            <i class="fa fa-plus-square" aria-hidden="true" onclick="add_description()"></i>
+                        </div>
+
                         <div class="upload-panel">
                             <div class="panel-heading"><strong>Upload letter json</strong>
                             </div>
-
+                            <hr>
                             <div class="panel-body" id="panel-body">
 
                                 <h4>Select files from your computer</h4>
@@ -111,7 +105,12 @@
 
                             </div>
                         </div>
-                        <button type="submit" class="custom-button">Submit</button>
+                        <div class="form-group">
+                            <label >Resources of interest:</label>
+                            <textarea id="text-area" rows="6"></textarea>
+                        </div>
+
+                        <button type="submit" class="custom-button" onclick="Submit(event)">Submit</button>
                     </form>
                 </div>
             </div>
@@ -130,9 +129,7 @@
 
 </body>
 
-<script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="assets/js/admin-upload.js"></script>
 
 
