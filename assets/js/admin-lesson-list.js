@@ -1,3 +1,5 @@
+dict ={};
+
 window.onload = function () {
     var config = {
         apiKey: "AIzaSyDfKkiegV-dCw0ach9PWJAIUJpDq7ZfQos",
@@ -19,6 +21,7 @@ function gotData(data) {
     keys = Object.keys(db.Lessons);
     iterator = 0;
     for (key of keys) {
+        dict[db.Lessons[key].lesson_name] = key;
         iterator += 1;
         var Letters = "";
         for (letter of db.Lessons[key].letters){
@@ -28,7 +31,8 @@ function gotData(data) {
         obj = {
             name: key,
             letters: Letters,
-            lesson_number: iterator
+            lesson_number: iterator,
+            lesson_title: db.Lessons[key].lesson_name
         };
 
         template = document.getElementById('lesson-list').innerHTML;
@@ -47,5 +51,10 @@ function errData(err) {
 function remove_lesson(event){
     lesson_title = event.path[3].children[0].childNodes[3].innerText;
     firebase.database().ref("Lessons/"+lesson_title).remove();
-    // event.path[3].parentNode.removeChild(event.path[3]);
+}
+
+function edit_lesson(event) {
+    lesson_title = lesson_title = event.path[3].children[0].childNodes[3].innerText;
+    localStorage.setItem('lesson_title', dict[lesson_title]);
+    window.location.href = 'admin-edit.html';
 }
