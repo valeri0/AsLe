@@ -80,10 +80,10 @@
     <div class="card" id="{{lesson_number}}">
         <div class="content">
             <img class="round-img" src="assets/img/letter.png">
-            <h3 class="lesson-title">{{name}}</h3><br>
+            <h3 class="lesson-title">{{lesson_title}}</h3><br>
             <p class="lesson-description">You're going to learn how to draw {{letters}}</p>
             <div class="edit-delete">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <i class="fa fa-pencil-square-o" aria-hidden="true" onclick="edit_lesson(event)"></i>
                 <i class="fa fa-trash-o" aria-hidden="true" onclick="remove_lesson(event)"></i>
             </div>
         </div>
