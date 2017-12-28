@@ -12,12 +12,18 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
-    
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js"></script>
+
+
 </head>
 
 <body>
 
-<!--
+    <!--
 
     <nav class="navbar">
             
@@ -40,7 +46,7 @@
     <div class="container">
         <div class="row vertical-center">
             <div class="register-panel">
-                <div id="login_form" class="panel panel-default hidden">
+                <div id="login_form" class="panel panel-default">
 
                     <div style="text-align: center">
                         <h2>Log in</h2>
@@ -60,8 +66,8 @@
                         <div style="text-align: center">
 
                         </div>
-                        
-                        <form role="form" action="#" method="#">
+
+                        <form id="lf">
                             <fieldset class="form-fieldset">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-10  col-md-offset-1 ">
@@ -70,7 +76,7 @@
                                                 <span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span>
-                                                <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                                <input id="l_email" class="form-control" placeholder="E-mail" name="login_email" type="email" required autofocus>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -78,13 +84,13 @@
                                                 <span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-                                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                                <input id="l_password" class="form-control" placeholder="Password" name="password" type="password" required value="">
                                             </div>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <input type="submit" class="register-login-button" value="Log in">
+                                            <button class="register-login-button">Log in</button>
                                         </div>
                                     </div>
                                 </div>
@@ -92,12 +98,12 @@
                         </form>
                     </div>
                     <div class="panel-footer">
-                            Don't have an account? <a id="register_here" href="#" onClick="switchToRegister()"> Register here! </a>
+                        Don't have an account? <a id="register_here" href="#" onClick="switchToRegister()"> Register here! </a>
                     </div>
                 </div>
 
 
-                <div id="register_form" class="panel panel-default">
+                <div id="register_form" class="panel panel-default hidden">
 
                     <div class="panel-body">
 
@@ -120,17 +126,40 @@
 
                             <a href="#" class="social-media-login"><img src="assets/img/gpluslogo.svg" alt=".." style="width: 13%"></a>
                         </div>
-                        
-                        <form role="form" action="#" method="#">
+
+                        <form id="rf">
                             <fieldset class="form-fieldset">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+
+                                        <div style="display: inline-flex; vertical-align: middle;">
+
+                                            <div class="form-group" style="margin-left: ">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                                    <input id="r_first_name" class="form-control" placeholder="First name" name="firstname" type="text" required autofocus>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" style="margin-left: 20px;">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                                    <input id="r_last_name" class="form-control" placeholder="Last Name" name="lastname" type="text" required autofocus>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">
-													<i class="glyphicon glyphicon-user"></i>
+													<i class="glyphicon glyphicon-envelope"></i>
 												</span>
-                                                <input class="form-control" placeholder="Username" name="loginname" type="text" autofocus>
+                                                <input id="r_email" class="form-control" placeholder="E-mail" name="register_email" type="email" required autofocus>
                                             </div>
                                         </div>
 
@@ -140,7 +169,17 @@
                                                 <span class="input-group-addon">
 													<i class="glyphicon glyphicon-envelope"></i>
 												</span>
-                                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                                <input id="r_country" class="form-control" placeholder="Country" name="register_country" type="Country" required autofocus>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</span>
+                                                <input id="r_password" class="form-control" placeholder="Password" name="password" type="password" required value="">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -148,38 +187,46 @@
                                                 <span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-                                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                                <input id="r_password_confirm" class="form-control" placeholder="Confirm password" name="confirm_password" required type="password" value="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-													<i class="glyphicon glyphicon-lock"></i>
-												</span>
-                                                <input class="form-control" placeholder="Confirm password" name="password" type="password" value="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" class="register-login-button" value="Register">
+                                            <button class="register-login-button">Register</button>
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
-                        
+
                     </div>
-                    
+
                     <div class="panel-footer">
-                            Already have an account? <a id="login_here" href="#" onClick="switchToLogin()">Log in here! </a>
+                        Already have an account? <a id="login_here" href="#" onClick="switchToLogin()">Log in here! </a>
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
     </div>
 
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDfKkiegV-dCw0ach9PWJAIUJpDq7ZfQos",
+            authDomain: "asle-a66d5.firebaseapp.com",
+            databaseURL: "https://asle-a66d5.firebaseio.com",
+            projectId: "asle-a66d5",
+            storageBucket: "asle-a66d5.appspot.com",
+            messagingSenderId: "744977998100"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <script src="assets/js/login-register-forms.js"></script>
+
 
 
 </body>
