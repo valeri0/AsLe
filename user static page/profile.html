@@ -5,8 +5,10 @@
 
     <meta charset="utf-8" />
     <title>AsLe</title>
+<!--
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lessons.css" rel="stylesheet">
@@ -49,36 +51,26 @@
                 </ul>
             </div>
         </div>
+        
+    
+    
+    <nav class="navbar" style=" width: 78%; float: right; margin: 0 9px 0px 0px; ">
+        <div class="field">
+            <i class="fa fa-user-circle user" aria-hidden="true"></i>
+            <a href="user%20static%20page/profile.html" style="display: inline-block">User</a>
+        </div>
 
-        <div class="main-panel" style="overflow-x: hidden">
+    </nav>
 
-            <nav class=" navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    </div>
 
-                    <div class="collapse navbar-collapse" id="mainNavBar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <i class="fa fa-user-circle user" aria-hidden="true"></i>
-                                <a href="#" style="display: inline-block">Straton</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+        <div class="main-panel">    
 
             <div class="main-content">
                 <div class="content">
                     <div class="container-fluid">
 
                         <div class="row">
-                            <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                            <div class="user-header">
                                 <div class="card">
                                     <div class="content">
                                         <div class="card hovercard">
@@ -101,12 +93,12 @@
                                                 <div class="btn-group btn-group-lg" role="group">
 
 
-                                                    <button type="button" id="button_details" class="btn my_button"><i class="fa fa-id-card-o fa-1x" style="color: white"></i>
+                                                    <button type="button" id="button_details" class="btn my_button" onclick="switchToAbout()"><i class="fa fa-id-card-o fa-1x" style="color: white"></i>
                                                     About
                                                 </button>
 
 
-                                                    <button type="button" id="button_stats" class="btn my_button">
+                                                    <button type="button" id="button_stats" class="btn my_button" onclick="switchToStats()">
                                                     <i class="fa fa-pie-chart fa-1x" style="color: white"></i>Stats
                                                 </button>
 
@@ -133,7 +125,7 @@
 
 
                             <div class="row">
-                                <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div class="half-colon">
                                     <div class="card">
                                         <div class="content">
                                             <div style="text-align: center">
@@ -141,12 +133,10 @@
                                                 <h4 style="text-align: left; font-weight: bold;">Your details</h4>
                                                 <div class="user_details">
                                                     <h5>First name: <span> Alexandru</span></h5>
+                                                    
                                                     <h5>Last name: <span>Straton </span></h5>
-                                                    <h5>Date of birth: <span>2nd January 1999</span></h5>
+                                                    
                                                     <h5>Country: <span> Romania</span></h5>
-
-                                                    <h5>City: <span> Iasi</span></h5>
-                                                    <h5>Occupation: <span> still in school</span></h5>
 
                                                     <h5>Registered at: <span> 1st Novemeber 2017</span></h5>
 
@@ -157,7 +147,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-5 col-lg-offset-0 col-md-10 col-md-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div class="half-colon">
                                     <div class="card">
                                         <div class="content">
 
@@ -222,9 +212,6 @@
                                                     </g>
                                                 </g>
                                             </svg>
-                                                <br>
-
-                                                <button id="test_button_belt_level" class="btn btn-primary" type="button"> Change level </button>
 
                                             </div>
 
@@ -245,15 +232,9 @@
                             <div class="row">
 
 
-                                <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div>
                                     <div class="card" style="width: 100%">
                                         <div class="content" style="width: 100%; height: 300px;">
-
-                                            <div style="text-align: center;">
-                                                <button id="test_change_charts_values_button" type="button" class="btn btn-lg">
-                                                    Change charts values
-                                                </button>
-                                            </div>
 
                                             <div id="area_chart"></div>
 
@@ -273,7 +254,7 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-lg-5 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div class="half-colon">
                                     <div class="card" style="width: 100%">
                                         <div class="content" style="width: 100%">
                                             <div id="donut_chart"></div>
@@ -290,7 +271,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-5 col-lg-offset-0 col-md-10 col-md-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div class="half-colon">
                                     <div class="card" style="width: 100%">
                                         <div class="content" style="width: 100%">
                                             <div id="line_chart"></div>
@@ -345,8 +326,6 @@
 <script src="assets/js/charts-action.js"></script>
 
 <script src="assets/js/tab-action.js"></script>
-
-<script src="assets/js/level-of-belt-action.js"></script>
 
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 

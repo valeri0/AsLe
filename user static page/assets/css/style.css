@@ -96,37 +96,73 @@ body {
 .btn-pref .btn {
     -webkit-border-radius: 0 !important;
 }
-.user_details{
+
+.user_details {
     margin-top: 6%;
 }
-.user_details h5{
+
+.user_details h5 {
     text-align: left;
     font-weight: bold;
     margin-bottom: 2%
 }
 
-.user_details h5 span{
+.user_details h5 span {
     font-weight: normal;
     text-align: center;
     margin-left: 4%
 }
 
-
-.my_button{
-    font-family: 'Roboto',sans-serif;
+.my_button {
+    margin-top: 2%;
+    margin-right: -4px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
     color: white;
-    background-color: #19a8a8;;
-    border-color:  #19a8a8;
+    background-color: #19a8a8;
+    border-color: #19a8a8;
+    width: 15%
 }
 
-.my_button:hover{
-    
-    background-color: #157171;
-    border-color: #157171;
-    
-}
-
-.my_button:focus{
+.my_button:hover {
     background-color: #157171;
     border-color: #157171;
 }
+
+.my_button:focus {
+    background-color: #157171;
+    border-color: #157171;
+}
+
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+}
+
+.main-panel {
+    margin-top: 5.5%;
+    background-color: #f4f3ef;
+    position: relative;
+    float: right;
+    width: calc(100% - 260px);
+    min-height: 100%;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.half-colon {
+    width: 49.794%;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+

@@ -136,7 +136,6 @@ function initialize() {
         google.visualization.events.addListener(d_chart, 'ready', function () {
 
             var donut_chart_uri = d_chart.getImageURI();
-            $('#share_donut_chart_button').attr('href', 'https://www.facebook.com/sharer.php?u=' + donut_char_uri);
 
             console.log(donut_chart_uri);
 
@@ -160,47 +159,6 @@ function initialize() {
 
     }
 
-    $('#test_change_charts_values_button').click(function () {
-
-        data_for_area_chart = google.visualization.arrayToDataTable([
-        ['Day', 'Letters drawn correct'],
-        [1, 4],
-        [2, 2],
-        [3, 0],
-        [4, 0],
-        [5, 0],
-        [6, 7],
-        [7, 9],
-        [8, 10],
-        [9, 1],
-        [10, 1],
-        [11, 9],
-        [12, 1],
-        [13, 4],
-        [14, 2]
-
-        ]);
-
-
-        data_for_donut_chart = google.visualization.arrayToDataTable([
-              ['Task', 'Hours per Day'],
-              ['Drawn', 25],
-              ['Remaining', 200]
-            ]);
-
-
-
-        data_for_line_chart = google.visualization.arrayToDataTable([
-              ['Week', 'Tries ', 'Successes'],
-              ['1', 200, 7],
-              ['2', 54, 2],
-              ['3', 70, 20]
-            ]);
-
-
-        drawChart();
-
-    });
 
 
     drawChart();
