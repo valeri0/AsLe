@@ -1,4 +1,5 @@
 var Files = new Array();
+var to_be_removed = new Array();
 
 function prepareDragDrop() {
     document.getElementById('drop-zone').addEventListener("dragover", function (event) {
@@ -49,12 +50,7 @@ function remove(event) {
             Files.splice(Files.indexOf(file), 1);
         }
     }
-    var desertRef = firebase.storage().ref('jsons/' + file_name);
-    desertRef.delete().then(function(){
-      console.log("it has been deleted")
-    }).catch(function(error) {
-      console.log("error!")
-    });
+    to_be_removed.push(event.path[1].innerText);
     event.srcElement.parentNode.parentNode.removeChild(event.srcElement.parentNode);
 }
 
@@ -129,12 +125,35 @@ function create_lesson(lesson, descriptions, resources_of_interest) {
         resources: resources_of_interest
     };
 
-    var update ={};
+    for (file of to_be_removed) {
+        var desertRef = firebase.storage().ref('jsons/' + file);
+        desertRef.delete().then(function () {
+            console.log("it has been deleted")
+        }).catch(function (error) {
+            console.log("error!")
+        });
+    }
+
+    var update = {};
     update[localStorage.getItem('lesson_title')] = Lesson;
 
     var firebaseRef = firebase.database().ref();
-    firebaseRef.child('Lessons').update(update);
-    window.location.href = 'admin-lesson-list.html';
+    firebaseRef.child('Lessons').update(update).then(function () {
+        document.getElementsByClassName('modal-content')[0].style.width = '25%';
+        document.getElementsByClassName('modal-content')[0].style.height = '25%';
+
+        document.getElementById('result').innerHTML = '<h1> Lesson has been updated</h1>' + svg_success;
+        openModal();
+        setTimeout(function () {
+            window.location.href = 'admin-lesson-list.html';
+        }, 2000);
+    }).catch(function (error) {
+        document.getElementsByClassName('modal-content')[0].style.width = '25%';
+        document.getElementsByClassName('modal-content')[0].style.height = '25%';
+
+        document.getElementById('result').innerHTML = '<h1> Ooops! Something went wrong</h1>' + svg_fail;
+        openModal();
+    });
 
 }
 
@@ -164,7 +183,7 @@ function editData(data) {
 
     template = document.getElementById('edit-template').innerHTML;
     var output = Mustache.render(template, obj);
-    document.getElementById('template').innerHTML += output;
+    document.getElementById('template').innerHTML = output;
     showUploadedFiles(db.letters);
     prepareDragDrop();
 }
@@ -175,14 +194,14 @@ function errData(err) {
 
 function showUploadedFiles(files) {
     file_divs = document.getElementsByClassName("uploaded-files");
-    for(div of file_divs){
-        div.innerHTML=""
+    for (div of file_divs) {
+        div.innerHTML = ""
     }
     for (file of files) {
         var div = document.createElement("div");
         var para = document.createElement("p");
         var file_icon = document.createElement("i");
-        var p_content = document.createTextNode(file+".json");
+        var p_content = document.createTextNode(file + ".json");
         var x_icon = document.createElement('i');
         file_icon.setAttribute('class', 'fa fa-file-code-o');
         file_icon.setAttribute('aria-hiden', 'true');

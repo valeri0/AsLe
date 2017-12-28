@@ -121,9 +121,25 @@ function create_lesson(lesson, descriptions, resources_of_interest) {
         paths: Paths,
         resources: resources_of_interest
     };
+    console.log(Lesson);
 
     var firebaseRef = firebase.database().ref();
-    firebaseRef.child('Lessons').push(Lesson);
+    firebaseRef.child('Lessons').push(Lesson).then(function () {
+        document.getElementsByClassName('modal-content')[0].style.width = '25%';
+        document.getElementsByClassName('modal-content')[0].style.height = '25%';
+
+        document.getElementById('result').innerHTML = '<h1> Lesson has been uploaded</h1>' + svg_success;
+        openModal();
+        setTimeout(function(){
+                window.location.href = 'admin-lesson-list.html';
+        },2000);
+    }).catch(function (error) {
+        document.getElementsByClassName('modal-content')[0].style.width = '25%';
+        document.getElementsByClassName('modal-content')[0].style.height = '25%';
+
+        document.getElementById('result').innerHTML = '<h1> Ooops! Something went wrong</h1>' + svg_fail;
+        openModal();
+    });
 
 }
 

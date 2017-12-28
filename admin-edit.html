@@ -8,6 +8,8 @@
     <link href="assets/css/navbars.css" rel="stylesheet">
     <link href="assets/css/admin-upload.css" rel="stylesheet">
     <link href="assets/css/content.css" rel="stylesheet">
+    <link href="assets/css/modal.css" rel="stylesheet">
+    <link href="assets/css/Loading.css" rel="stylesheet">
 
 </head>
 <body onload="Init()">
@@ -66,7 +68,17 @@
 
         </div>
     </div>
+    <!-- Response Modal -->
+    <div class="overlay is-hidden" id="overlay">
+        <div class="modal-content">
+            <span class="button-close" onclick="closeModal();"></span>
 
+            <div id="result" align="center">
+
+            </div>
+        </div>
+    </div>
+    <!-- Response Modal -->
 
     <footer class="footer">
         <div class="container-fluid">
@@ -78,6 +90,7 @@
 
 </body>
 
+<script src="assets/js/modal.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" type="text/javascript"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="assets/js/admin-edit.js"></script>
@@ -113,7 +126,8 @@
                         <div class="ex-element">
                             <label>Letter {{index}} hex:</label>
                             <input type="text" class="exercises-input" id="hex{{index}}" value="{{other_hex}}">
-                        </div><i class="fa fa-times" aria-hidden="true" onclick="remove(event)"></i>
+                        </div>
+                        <i class="fa fa-times" aria-hidden="true" onclick="remove(event)"></i>
 
                     </div>
                 </div>
@@ -150,6 +164,8 @@
 
                 <button type="submit" class="custom-button" onclick="Submit(event)">Submit</button>
             </form>
+
+
         </div>
     </div>
 </script>

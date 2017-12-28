@@ -50,7 +50,7 @@ function errData(err) {
 
 function remove_lesson(event){
     lesson_title = event.path[3].children[0].childNodes[3].innerText;
-    firebase.database().ref("Lessons/"+lesson_title).remove();
+    firebase.database().ref("Lessons/"+dict[lesson_title]).remove();
 }
 
 function edit_lesson(event) {
