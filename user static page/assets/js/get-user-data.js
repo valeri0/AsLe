@@ -68,4 +68,10 @@ function renderDbValuesToHtml(jsonObj){
 
     // pentru culoarea nivelului (kimono + titlu) vom apela functia din level-of-belt-action.js
     setLevelColorForKimonoAndTitle(jsonObj.stats.level.color);
+
+    // pentru header si poza de profil
+
+    document.getElementById('photo_bg').setAttribute('src',jsonObj.photo_url);
+    document.getElementById('photo_avatar').setAttribute('src',jsonObj.photo_url);
+
 }

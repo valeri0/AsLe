@@ -1,17 +1,5 @@
-// dictionar folosit pentru culori:
 
-/*
-        0%{fill:grey}
-        11%{fill:rgb(218, 165, 32)}
-        22%{fill:#d8951a}
-        33%{fill:green}
-        44%{fill: #000099}
-        55%{fill:purple}
-        66%{fill:#b30000}
-        77%{fill:brown}
-        88%{fill: black}
-        100%{fill: grey}
- */
+// dictionar folosit pentru culori:
 
 var defined_colors ={
 
