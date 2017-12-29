@@ -135,3 +135,10 @@ body {
     color: #e3e3e3;
     font-size: 15px
 }
+
+.error-section{
+    text-align: center;
+    font-size: 12px;
+    color: #ff282a;
+    font-weight: bold;
+}

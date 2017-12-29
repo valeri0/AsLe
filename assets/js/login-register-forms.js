@@ -62,7 +62,7 @@ function fadeIn(el, display) {
 
 
 
-//firebase.auth().onAuthStateChanged(onAuthStateChange);
+firebase.auth().onAuthStateChanged(onAuthStateChange);
 
 
 
@@ -73,8 +73,11 @@ function fadeIn(el, display) {
 /* REGISTER */
 
 var rf = document.getElementById('rf');
+var rf_error_message = document.getElementById('rf-error-message');
 
 rf.addEventListener('submit', function (e) {
+
+    rf_error_message.innerHTML="";
 
     e.preventDefault();
 
@@ -84,8 +87,17 @@ rf.addEventListener('submit', function (e) {
     var email = document.getElementById('r_email').value;
     var password = document.getElementById('r_password').value;
     var confirm_password = document.getElementById('r_password_confirm').value;
-    
-    createUser(first_name,last_name,country,email,password);
+
+    if(password.localeCompare(confirm_password) !== 0){
+
+        rf_error_message.innerHTML += 'Passwords do not match!';
+    }
+
+    else{
+
+        createUser(first_name,last_name,country,email,password);
+    }
+
     
 });
 
@@ -107,7 +119,28 @@ function createUser(first_name, last_name, country, email, password) {
 
         email: email,
         
-        role: "user"
+        role: "user",
+
+        stats: {
+
+            level:{
+
+                color: 'grey'
+            },
+
+            per_day:{
+                day : 1,
+                number_of_letters_drawn: 0
+            },
+
+            per_week:{
+                week: 1,
+                number_of_tries: 0,
+                number_of_successes: 0
+            }
+
+
+        }
 
     };
 
@@ -115,14 +148,42 @@ function createUser(first_name, last_name, country, email, password) {
 
         // Handle Errors here.
 
-        var errorCode = error.code;
-
         var errorMessage = error.message;
 
-        alert(errorMessage)
+        rf_error_message.innerHTML=errorMessage;
 
     });
 
+}
+
+
+function onAuthStateChange(user){
+    if(user) {
+        //User is signed in.
+        var uid = user.uid;
+
+
+        if (inCreatingUser) {
+            inCreatingUser = false;
+            saveUserData(uid, userData);
+        }
+
+
+    }
+}
+
+function saveUserData(userId,userData){
+    firebase.database().ref('users/'+userId).set(userData)
+
+        .then(function onSuccess(res){
+
+            window.location.href = './ListOfLessons.html';
+
+        }).catch(function onError(err){
+
+            rf_error_message.innerHTML = err.message;
+
+        });
 }
 
 /* --------------------------------------------------------- */
@@ -134,18 +195,44 @@ function createUser(first_name, last_name, country, email, password) {
 
 
 
-/* LOGIN */
+// /* LOGIN */
+firebase.auth().onAuthStateChanged(onAuthStateChange);
 
 var lf = document.getElementById('lf');
+var lf_error_message = document.getElementById('lf-error-message');
 
 lf.addEventListener('submit', function (e) {
 
+    e.preventDefault();
 
+    lf_error_message.innerHTML="";
+    var email = document.getElementById('l_email').value;
+    var password = document.getElementById('l_password').value;
+
+    login(email,password);
 
 });
 
-function login() {
-    alert('login');
+function login(email,password) {
+
+    firebase.auth().signInWithEmailAndPassword(email,password)
+
+
+        .then(function onSucces(res){
+
+            //signed in with success
+
+            window.location.href = './ListOfLessons.html';
+
+        }). catch(function(error){
+
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        lf_error_message.innerHTML=errorMessage;
+
+        });
 }
 
 
