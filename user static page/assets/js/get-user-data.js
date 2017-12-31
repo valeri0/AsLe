@@ -1,6 +1,6 @@
 // FISIER FACUT PENTRU GESTIONAREA DATELOR DIN BAZA DE DATE FIREBASE IMPREUNA CU PAGINA DE PREZENTARE HTML
 
-
+var user_uid = undefined;
 
 // handler pentru butonul de logout
 function logout(){
@@ -26,6 +26,7 @@ function onAuthStateChange(user) {
 
         var email = user.email;
         var userId = user.uid;
+        user_uid = userId;
 
         // vom face apel la baza de date pentru a prelua datele despre acesta
 
@@ -55,7 +56,7 @@ function renderDbValuesToHtml(jsonObj){
     var output = Mustache.render("<h5>First name: <span> {{first_name}}</span></h5>\n" +
         "                                                    <h5>Last name: <span> {{last_name}}</span></h5>\n" +
         "                                                    <h5>Country: <span> {{country}}</span></h5>\n" +
-        "                                                    <h5>Registered at: <span> 1st Novemeber 2017</span></h5>\n"
+        "                                                    <h5>Registered at: <span> {{created_at}}</span></h5>\n"
 
         , jsonObj );
 
@@ -72,6 +73,48 @@ function renderDbValuesToHtml(jsonObj){
     // pentru header si poza de profil
 
     document.getElementById('photo_bg').setAttribute('src',jsonObj.photo_url);
-    document.getElementById('photo_avatar').setAttribute('src',jsonObj.photo_url);
+    document.getElementById('pht_avtr').setAttribute('src',jsonObj.photo_url);
 
 }
+
+
+
+
+
+// functie pentru upload-ul unei poze noi de profil pentru un utilizator
+
+var upload_elem = document.getElementById('image-upload');
+
+upload_elem.addEventListener('change',function(e) {
+
+    var file = e.target.files[0];
+
+
+    // verificam daca fisierul este de tip imagine
+    var ValidImageTypes = ["image/gif", "image/jpeg", "image/png","image/jpg","image/bmp"];
+    if(ValidImageTypes.indexOf(file.type) == -1){
+        alert("Your uploaded file is not a picture!")
+        return;
+    }
+
+
+    var storageRef = firebase.storage().ref('img/' + file.name);
+
+    storageRef.put(file).then(function (snapshot) {
+
+
+        firebase.database().ref('users/' + user_uid).update({
+
+            photo_url: snapshot.downloadURL
+
+        }).then(function(res){
+
+            document.location.reload(true);
+
+        });
+    }).catch(function(error){
+
+        alert(error.message);
+
+    });
+});

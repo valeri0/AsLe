@@ -121,6 +121,10 @@ function createUser(first_name, last_name, country, email, password) {
         
         role: "user",
 
+        photo_url: "https://firebasestorage.googleapis.com/v0/b/asle-a66d5.appspot.com/o/img%2Fuser-2517433_640.png?alt=media&token=fcd01355-e665-4394-b19f-e3982f3b9cac",
+
+        created_at: new Date().toDateString(),
+
         stats: {
 
             level:{

@@ -72,11 +72,19 @@
                                     <div class="content">
                                         <div class="card hovercard">
                                             <div  class="card-background">
-                                                <img id="photo_bg" class="card-bkimg" alt="" src="assets/img/user_pic.jpg">
+                                                <img id="photo_bg" class="card-bkimg" alt="" src="assets/img/user_pic.jpg">\s
                                             </div>
-                                            <div class="useravatar">
-                                                <img id="photo_avatar" alt="" src="assets/img/user_pic.jpg">
+
+                                            <div >
+                                                <label class="useravatar"  for= "image-upload">
+                                                    <img id="pht_avtr" class="photo_avatar" alt="" src="assets/img/user_pic.jpg">
+                                                    <div class="overlay_photo_avatar">
+                                                        <div class = "text">Change picture</div>
+                                                    </div>
+                                                </label>
+                                                <input style="display: none " id="image-upload" type="file"  accept="image/example">
                                             </div>
+
                                             <div class="card-info"> <span  id = "header-name" class="card-title"></span>
 
                                             </div>

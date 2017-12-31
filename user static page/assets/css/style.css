@@ -51,6 +51,26 @@ body {
     right: 0;
 }
 
+.overlay_photo_avatar{
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #0c92a8;
+}
+
+.photo_avatar:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: .3s ease;
+    filter: contrast(50%);
+}
+
+.overlay_photo_avatar .text{
+    color: #e1fff1;
+    font-size: 12px;
+    transform: translate(-50%, -50%);
+}
+
+
 .card.hovercard .useravatar img {
     width: 100px;
     height: 100px;
@@ -149,8 +169,6 @@ body {
 }
 
 .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }

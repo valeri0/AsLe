@@ -36,6 +36,8 @@ function google_auth(){
 
             role: "user",
 
+            created_at: new Date().toDateString(),
+
             stats: {
 
                 level:{
@@ -109,6 +111,8 @@ function facebook_auth(){
             email: email,
 
             role: "user",
+
+            created_at: new Date().toDateString(),
 
             stats: {
 
