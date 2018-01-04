@@ -8,10 +8,47 @@ var index = 0;
 
 window.onload = Init();
 
+firebase.auth().onAuthStateChanged(onAuthStateChange);
 
+// handler pentru butonul de logout
+function logout(){
+    firebase.auth().signOut().then(function(){
+
+        window.location='../Start.hmtl';
+
+    }).catch(function(error){
+        console.log(error.message);
+    });
+}
+
+//functie ce verifica starea utilizatorului
+function onAuthStateChange(user) {
+    if (user) {
+
+        // in caz ca este logat
+
+        var email = user.email;
+        var userId = user.uid;
+        user_uid = userId;
+
+        // vom face apel la baza de date pentru a prelua datele despre acesta
+
+        firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+
+            renderDbValuesToHtml(snapshot.val());
+
+        });
+    }
+    else
+        {
+            // in cazul in care iese din aplicatie, va fi redirectionat la pagina de start
+
+            window.location = '../Start.html';
+        }
+}
 
 function Init() {
-    var lesson = 'Lesson 3';
+    var lesson = localStorage.getItem('lesson_title');
 
     firebase.database().ref('/Lessons/' + lesson).once('value').then(function (snapshot) {
         for (let i = 0; i < snapshot.val().letters.length; i++) {

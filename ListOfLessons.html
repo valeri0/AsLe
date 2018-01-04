@@ -88,23 +88,23 @@
 
 
 <script id="lesson-list" type="text/html">
-    <a href="Lesson.html">
-        <div class="card">
-            <div class="content">
-                <div class="row">
-                    <img class="round-img" src="assets/img/letter.png">
-                    <h3 class="lesson-title">{{lesson_title}}</h3><br>
-                    <p class="lesson-description">You're going to learn how to draw {{letters}}</p>
-                    <div class="progress progress-dimentions">
-                        <progress value="30" max="100">
-                            22%
-                        </progress>
-                    </div>
 
+    <div class="card" onclick="getId(event)">
+        <div class="content">
+            <div class="row">
+                <img class="round-img" src="assets/img/letter.png">
+                <h3 class="lesson-title">{{lesson_title}}</h3><br>
+                <p class="lesson-description">You're going to learn how to draw {{letters}}</p>
+                <div class="progress progress-dimentions">
+                    <progress value="30" max="100">
+                        22%
+                    </progress>
                 </div>
+
             </div>
         </div>
-    </a>
+    </div>
+
 
 </script>
 

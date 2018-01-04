@@ -132,18 +132,14 @@ function createUser(first_name, last_name, country, email, password) {
                 color: 'grey'
             },
 
-            per_day:{
-                day : 1,
-                number_of_letters_drawn: 0
-            },
-
-            per_week:{
-                week: 1,
-                number_of_tries: 0,
-                number_of_successes: 0
-            }
-
-
+            // per_day:[
+            //     {
+            //         date: new Date().toDateString(),
+            //         score: 0,
+            //         number_of_tries: 0,
+            //         number_of_successes: 0
+            //     },
+            // ],
         }
 
     };
@@ -180,7 +176,6 @@ function saveUserData(userId,userData){
     firebase.database().ref('users/'+userId).set(userData)
 
         .then(function onSuccess(res){
-
             window.location.href = './ListOfLessons.html';
 
         }).catch(function onError(err){

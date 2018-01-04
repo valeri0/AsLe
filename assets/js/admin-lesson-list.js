@@ -13,6 +13,12 @@ window.onload = function () {
 
     var refFireBase = firebase.database().ref();
     refFireBase.on('value', gotData, errData);
+};
+
+function getId(event){
+    var lesson_name = event.originalTarget.childNodes[3].innerText;
+    localStorage.setItem('lesson_title', dict[lesson_name]);
+    window.location = 'Lesson.html';
 }
 
 function gotData(data) {
@@ -39,9 +45,6 @@ function gotData(data) {
         var output = Mustache.render(template, obj);
         document.getElementById('template').innerHTML += output;
     }
-
-
-
 }
 
 function errData(err) {
@@ -49,12 +52,12 @@ function errData(err) {
 }
 
 function remove_lesson(event){
-    lesson_title = event.path[3].children[0].childNodes[3].innerText;
+    var lesson_title = event.path[3].children[0].childNodes[3].innerText;
     firebase.database().ref("Lessons/"+dict[lesson_title]).remove();
 }
 
 function edit_lesson(event) {
-    lesson_title = lesson_title = event.path[3].children[0].childNodes[3].innerText;
+    var lesson_title = event.path[3].children[0].childNodes[3].innerText;
     localStorage.setItem('lesson_title', dict[lesson_title]);
     window.location.href = 'admin-edit.html';
 }
