@@ -192,7 +192,7 @@ function syncUserProgressData() {
 
     });
 
-    //window.location = 'ListOfLessons.html';
+    window.location = 'ListOfLessons.html';
 }
 
 function testImage() {
