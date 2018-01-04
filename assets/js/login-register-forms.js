@@ -140,8 +140,13 @@ function createUser(first_name, last_name, country, email, password) {
             //         number_of_successes: 0
             //     },
             // ],
-        }
 
+            /*lessons_progress:[
+                lesson_id: {
+                    number_of_drawn_letters: 2
+                }
+            ]*/
+        }
     };
 
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/Loading.css">
     <link rel="stylesheet" href="assets/css/small-screen.css">
     <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/dropdown.css">
 </head>
 
 <body>
@@ -48,8 +49,14 @@
         </div>
 
         <div class="field">
-            <i class="fa fa-user-circle user" aria-hidden="true"></i>
-            <a href="user%20static%20page/profile.html" style="display: inline-block">User</a>
+            <div class="dropdown">
+                <i class="fa fa-user-circle user dropbtn" aria-hidden="true"></i>
+                <p id="username" style="display: inline-block;"></p>
+                <div class="dropdown-content">
+                    <a href="user%20static%20page/profile.html">Profile</a>
+                    <a href="#" onclick="logout();">Logout</a>
+                </div>
+            </div>
         </div>
     </nav>
 
