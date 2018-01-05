@@ -77,10 +77,12 @@ function Init() {
                 xhr.open('GET', url);
                 xhr.onload = function (event) {
                     count++;
+                    console.log(xhr.response);
                     json.push(xhr.response);
 
                     if (count === paths.length) {
                         setPronunciation(pronunciation[0]);
+                        arrangeAnimationData();
                         InitAnimation(json[0]);
                     }
                 };
@@ -93,6 +95,21 @@ function Init() {
     }).catch(function (error) {
         console.error(error);
     });
+}
+
+function arrangeAnimationData() {
+    let temp = [];
+
+    for (let answer of correct_answers) {
+        for (let anim of json) {
+            if (anim.chars[0].ch.charCodeAt(0) === answer) {
+                temp.push(anim);
+                break;
+            }
+        }
+    }
+
+    json = temp;
 }
 
 function InitAnimation(animation_json) {
