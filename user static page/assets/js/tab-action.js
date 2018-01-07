@@ -1,6 +1,7 @@
 var aboutTab = document.getElementById("tab1");
 var statsTab = document.getElementById("tab2");
 
+
 function switchToAbout(){
     switchTabs(statsTab,aboutTab);
 }

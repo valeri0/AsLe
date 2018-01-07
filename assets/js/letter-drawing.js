@@ -207,6 +207,8 @@ function syncUserProgressData() {
             console.error(error);
         });
 
+    }).catch(function(error){
+        alert(error.message);
     });
 
     window.location = 'ListOfLessons.html';

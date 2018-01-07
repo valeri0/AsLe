@@ -33,6 +33,7 @@ function onAuthStateChange(user) {
         firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
 
             renderDbValuesToHtml(snapshot.val());
+            user_stats = snapshot.val().stats;
 
         });
     }
@@ -49,7 +50,7 @@ function onAuthStateChange(user) {
 
 function renderDbValuesToHtml(jsonObj){
 
-    console.log(jsonObj);
+
 
     // pentru tab-ul "Your details"
 
