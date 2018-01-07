@@ -161,57 +161,65 @@ function initialize() {
 
                 // End Options
 
-                // Begin Instantiation
-                var area_chart = new google.visualization.AreaChart(document.getElementById('area_chart'));
-
-
-                var donut_chart = new google.visualization.PieChart(document.getElementById('donut_chart'));
-
-                var line_chart = new
-                google.visualization.LineChart(document.getElementById('line_chart'));
-
-                // End Instantiation
-
-
-                // Get images uri for share
-
-                var area_chart_div = document.getElementById('area_chart');
-                var donut_chart_div = document.getElementById('donut_chart');
-                var line_chart_div = document.getElementById('line_chart');
 
 
 
                 function drawChart() {
 
 
+
+
+                    var area_chart_div = document.getElementById('area_chart');
+                    var donut_chart_div = document.getElementById('donut_chart');
+                    var line_chart_div = document.getElementById('line_chart');
+
+
                     var a_chart = new google.visualization.AreaChart(area_chart_div);
                     var d_chart = new google.visualization.PieChart(donut_chart_div);
                     var l_chart = new google.visualization.LineChart(line_chart_div);
 
+
+                    var storageRef = firebase.storage().ref();
+
+
                     google.visualization.events.addListener(a_chart, 'ready', function () {
 
-                        let area_chart_uri = a_chart.getImageURI();
+
+                        storageRef.child('user_charts/'+userId+'/area_chart.png').putString(a_chart.getImageURI().substring(22),'base64').then(function(snapshot){
+
+                                document.getElementById('area_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
+
+                        });
+
                     });
 
                     google.visualization.events.addListener(d_chart, 'ready', function () {
 
-                        var donut_chart_uri = d_chart.getImageURI();
+                        storageRef.child('user_charts/'+userId+'/donut_chart.png').putString(d_chart.getImageURI().substring(22),'base64').then(function(snapshot){
 
-                        console.log(donut_chart_uri);
+                            document.getElementById('donut_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
+
+                        });
 
                     });
 
                     google.visualization.events.addListener(l_chart, 'ready', function () {
 
-                        line_chart_uri = l_chart.getImageURI();
+                        storageRef.child('user_charts/'+userId+'/line_chart.png').putString(l_chart.getImageURI().substring(22),'base64').then(function(snapshot){
+
+                            document.getElementById('line_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
+
+                        });
 
                     });
 
 
                     // Begin Drawing
-                    area_chart.draw(data_for_area_chart, options_area_chart);
-                    donut_chart.draw(data_for_donut_chart, options_donut_chart);
-                    line_chart.draw(data_for_line_chart, options_line_chart);
+
+                    a_chart.draw(data_for_area_chart, options_area_chart);
+                    d_chart.draw(data_for_donut_chart, options_donut_chart);
+                    l_chart.draw(data_for_line_chart, options_line_chart);
+
                     // End Drawing
 
 
