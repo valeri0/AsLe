@@ -1,7 +1,5 @@
 // FISIER FACUT PENTRU GESTIONAREA DATELOR DIN BAZA DE DATE FIREBASE IMPREUNA CU PAGINA DE PREZENTARE HTML
 
-var user_uid = undefined;
-
 // handler pentru butonul de logout
 function logout(){
     firebase.auth().signOut().then(function(){

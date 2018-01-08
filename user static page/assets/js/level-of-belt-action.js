@@ -16,7 +16,9 @@ var defined_colors ={
 };
 
 
-function setLevelColorForKimonoAndTitle(color){
+
+
+function setLevelColorForKimonoAndTitle(color) {
 
     // pentru titlu
 
@@ -32,4 +34,28 @@ function setLevelColorForKimonoAndTitle(color){
     document.getElementById('path62').style.fill = defined_colors[color];
 
 
+
+
+    firebase.auth().onAuthStateChanged(onAuthStateChange);
+
+
+    //functie ce verifica starea utilizatorului
+    function onAuthStateChange(user) {
+        if (user) {
+
+
+            var userId = user.uid;
+
+            var storageRef = firebase.storage().ref();
+            var kimono = document.getElementById('kimono_svg');
+
+
+            storageRef.child('user_charts/' + userId + '/level.svg ').putString(btoa(new XMLSerializer().serializeToString(kimono)), 'base64',{contentType:'image/svg+xml'}).then(function (snapshot) {
+
+                document.getElementById('level_google_share').setAttribute('href', 'https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
+            });
+        }
+
+
+    }
 }

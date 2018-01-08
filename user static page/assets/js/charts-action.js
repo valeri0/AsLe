@@ -167,8 +167,6 @@ function initialize() {
                 function drawChart() {
 
 
-
-
                     var area_chart_div = document.getElementById('area_chart');
                     var donut_chart_div = document.getElementById('donut_chart');
                     var line_chart_div = document.getElementById('line_chart');
@@ -185,7 +183,8 @@ function initialize() {
                     google.visualization.events.addListener(a_chart, 'ready', function () {
 
 
-                        storageRef.child('user_charts/'+userId+'/area_chart.png').putString(a_chart.getImageURI().substring(22),'base64').then(function(snapshot){
+
+                        storageRef.child('user_charts/'+userId+'/area_chart.png').putString(a_chart.getImageURI().substring(22),'base64', {contentType:'image/png'}).then(function(snapshot){
 
                                 document.getElementById('area_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
 
@@ -195,7 +194,7 @@ function initialize() {
 
                     google.visualization.events.addListener(d_chart, 'ready', function () {
 
-                        storageRef.child('user_charts/'+userId+'/donut_chart.png').putString(d_chart.getImageURI().substring(22),'base64').then(function(snapshot){
+                        storageRef.child('user_charts/'+userId+'/donut_chart.png').putString(d_chart.getImageURI().substring(22),'base64',{contentType:'image/png'}).then(function(snapshot){
 
                             document.getElementById('donut_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
 
@@ -205,7 +204,7 @@ function initialize() {
 
                     google.visualization.events.addListener(l_chart, 'ready', function () {
 
-                        storageRef.child('user_charts/'+userId+'/line_chart.png').putString(l_chart.getImageURI().substring(22),'base64').then(function(snapshot){
+                        storageRef.child('user_charts/'+userId+'/line_chart.png').putString(l_chart.getImageURI().substring(22),'base64',{contentType:'image/png'}).then(function(snapshot){
 
                             document.getElementById('line_chart_google_share').setAttribute('href','https://plus.google.com/share?url=' + encodeURI(snapshot.downloadURL));
 
