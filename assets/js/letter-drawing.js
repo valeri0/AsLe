@@ -4,7 +4,6 @@ let json = [];
 let correct_answers = [];
 let pronunciation = [];
 let answered_correctly = [];
-
 let index = 0;
 let lesson_score = 0;
 
@@ -84,6 +83,7 @@ function Init() {
                         setPronunciation(pronunciation[0]);
                         arrangeAnimationData();
                         InitAnimation(json[0]);
+                        drawBackground(correct_answers[0]);
                     }
                 };
                 xhr.send();
@@ -112,6 +112,8 @@ function arrangeAnimationData() {
     json = temp;
 }
 
+
+
 function InitAnimation(animation_json) {
     animation = bodymovin.loadAnimation({
         container: document.getElementById('bm'),
@@ -134,7 +136,7 @@ function refresh() {
     document.getElementById('bm').innerHTML = '';
     setPronunciation(pronunciation[index]);
     InitAnimation(json[index]);
-    clearArea();
+    clearArea(correct_answers[index]);
 }
 
 function MoveNextQuestion() {
