@@ -44,17 +44,17 @@ function google_auth(){
 
                     color: 'grey'
                 },
-
-                per_day:{
-                    day : 1,
-                    number_of_letters_drawn: 0
-                },
-
-                per_week:{
-                    week: 1,
-                    number_of_tries: 0,
-                    number_of_successes: 0
-                }
+                //
+                // per_day:{
+                //     day : 1,
+                //     number_of_letters_drawn: 0
+                // },
+                //
+                // per_week:{
+                //     week: 1,
+                //     number_of_tries: 0,
+                //     number_of_successes: 0
+                // }
 
 
             }
@@ -121,16 +121,16 @@ function facebook_auth(){
                     color: 'grey'
                 },
 
-                per_day:{
-                    day : 1,
-                    number_of_letters_drawn: 0
-                },
-
-                per_week:{
-                    week: 1,
-                    number_of_tries: 0,
-                    number_of_successes: 0
-                }
+                // per_day:{
+                //     day : 1,
+                //     number_of_letters_drawn: 0
+                // },
+                //
+                // per_week:{
+                //     week: 1,
+                //     number_of_tries: 0,
+                //     number_of_successes: 0
+                // }
 
 
             }

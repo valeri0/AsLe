@@ -46,16 +46,31 @@ function initialize() {
                     return count;
                 }
 
+                function orderByDay(array){
+
+
+
+                }
+
                 // pentru area_chart
                 function getArrayOfScorePerDay(user_stats){
 
-                    var array = [['Day','Score']];
+                    var array = [];
 
                     for(var day in user_stats.per_day){
 
-                        array.push([day,user_stats.per_day[day].score])
+                        array.push([new Date(day),user_stats.per_day[day].score])
 
                     }
+
+                     array.sort(function(a,b){
+
+                        return a[0] - b[0];
+
+                    });
+
+                    array.splice(0,0,['Day','Score']);
+
 
                     /*
                         in caz ca nu avem date destule pentru grafic, il vom initializa cu o valoare dummy
@@ -70,16 +85,25 @@ function initialize() {
 
                 // pentru line_chart
                 function getArrayOfTotalTriesAndSuccessesPerDay(user_stats){
-                    var array = [['Day','Tries','Successes']];
+                    var array = [];
 
                     for(var day in user_stats.per_day){
-                        array.push([day,user_stats.per_day[day].number_of_tries,user_stats.per_day[day].number_of_successes])
+                        array.push([new Date(day),user_stats.per_day[day].number_of_tries,user_stats.per_day[day].number_of_successes])
                     }
+
+
+
+                    array.sort(function(a,b){
+
+                        return a[0] - b[0];
+
+                    });
+
+                    array.splice(0,0,['Day','Tries','Successes']);
 
                     /*
                          in caz ca nu avem date destule pentru grafic, il vom initializa cu o valoare dummy
                     */
-
                     if(array.length == 1){
                         array.push(['No data', 0,0]);
                     }
