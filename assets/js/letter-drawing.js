@@ -113,7 +113,6 @@ function arrangeAnimationData() {
 }
 
 
-
 function InitAnimation(animation_json) {
     animation = bodymovin.loadAnimation({
         container: document.getElementById('bm'),
@@ -179,12 +178,8 @@ function syncUserProgressData() {
                 }
             }
 
-            if (overall_lesson_progress.number_of_letters_drawn <= correct_answers.length) {
-                overall_progress.score += today_progress.score;
-            } else {
-                overall_progress.score = Math.max(overall_progress.score, today_progress.score);
-            }
 
+            overall_progress.score += today_progress.score;
             overall_progress.number_of_tries += today_progress.number_of_tries;
             overall_progress.number_of_successes += today_progress.number_of_successes;
         } else {
@@ -209,11 +204,9 @@ function syncUserProgressData() {
             console.error(error);
         });
 
-    }).catch(function(error){
+    }).catch(function (error) {
         alert(error.message);
     });
-
-    window.location = 'ListOfLessons.html';
 }
 
 function testImage() {
@@ -234,9 +227,8 @@ function testImage() {
                     score = result.confidence * MULTIPLIER;
                 }
 
-                lesson_score += score;
-
                 if (!answered_correctly[index]) {
+                    lesson_score += score;
                     today_progress.score += score;
                     today_progress.number_of_successes += 1;
                     today_progress.number_of_tries += 1;
@@ -244,9 +236,13 @@ function testImage() {
                     answered_correctly[index] = true;
                 }
 
+                if (answered_correctly.indexOf(false) === -1) {
+                    syncUserProgressData();
+                }
+
                 if (lesson_progress.number_of_drawn_letters === correct_answers.length) {
                     let done = `</br><h2>You're done with an average score of: ${(lesson_score / correct_answers.length).toFixed(2)}</h2></br>
-                                <button class="done-button" onclick="syncUserProgressData();">OK</button>`;
+                                <button class="done-button" onclick="window.location = 'ListOfLessons.html';">OK</button>`;
 
                     document.getElementById('result').innerHTML = '<h1>' + result.text + ' Correct</h1>' + svg_success + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>' + done;
                 } else {
