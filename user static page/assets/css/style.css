@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     height: auto;
     font-family: 'Roboto', sans-serif;
+    background-color: #f4f3ef;
 }
 
 .card {
@@ -164,7 +165,9 @@ body {
     background-color: #f4f3ef;
     position: relative;
     float: right;
-    width: calc(100% - 260px);
+    /*width: calc(100% - 260px);*/
+    max-width: 100%;
+    width: 80%;
     min-height: 100%;
 }
 
