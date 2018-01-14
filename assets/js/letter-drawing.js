@@ -16,10 +16,26 @@ let today_progress = {
 };
 
 let lesson_progress = {
-    number_of_drawn_letters: 0
+    number_of_drawn_letters: 0,
+    total_number_of_letters: 0
 };
 
 let lesson = localStorage.getItem('lesson_title');
+
+let level_threshold = {
+
+    2: "yellow",
+    3: "orange",
+    5: "green",
+    8: "blue",
+    13: "red",
+    21: "purple",
+    35: "brown",
+    56: "black"
+
+};
+
+let level_color;
 
 firebase.auth().onAuthStateChanged(onAuthStateChange);
 
@@ -59,6 +75,9 @@ function onAuthStateChange(user) {
 
 function Init() {
     firebase.database().ref('/Lessons/' + lesson).once('value').then(function (snapshot) {
+
+        lesson_progress.total_number_of_letters = snapshot.val().letters.length;
+
         for (let i = 0; i < snapshot.val().letters.length; i++) {
             pronunciation.push(snapshot.val().letters[i]);
             correct_answers.push(parseInt(snapshot.val().hex[i], 16));
@@ -155,7 +174,7 @@ function MovePreviousQuestion() {
 }
 
 function syncUserProgressData() {
-    let overall_lesson_progress = {number_of_letters_drawn: 0};
+    let overall_lesson_progress = {number_of_letters_drawn: 0, total_number_of_letters: 0};
     let overall_progress = {
         score: 0,
         number_of_tries: 0,
@@ -163,9 +182,39 @@ function syncUserProgressData() {
     };
 
     firebase.database().ref('/users/' + user_uid + '/stats/').once('value').then(function (snapshot) {
+
         if (typeof snapshot.val().lessons_progress !== 'undefined') {
             overall_lesson_progress = snapshot.val().lessons_progress[lesson];
             overall_lesson_progress.number_of_letters_drawn += lesson_progress.number_of_drawn_letters;
+
+            var sum = 0;
+            for (var a_lesson of Object.keys(snapshot.val().lessons_progress)) {
+
+                sum += snapshot.val().lessons_progress[a_lesson].number_of_letters_drawn;
+
+            }
+
+            var threshold = 0;
+
+            for (var key of Object.keys(level_threshold)) {
+
+                var value_of_key = parseInt(key);
+
+                if (sum < value_of_key) {
+                    break;
+                }
+
+                threshold = value_of_key;
+
+            }
+
+            firebase.database().ref('/users/' + user_uid + '/stats/level').set({color:level_threshold[threshold]}).then(function () {
+
+            }).catch(function (error) {
+                console.error(error);
+            });
+
+
         } else {
             overall_lesson_progress.number_of_letters_drawn = lesson_progress.number_of_drawn_letters;
         }
@@ -190,6 +239,7 @@ function syncUserProgressData() {
 
         if (overall_lesson_progress.number_of_letters_drawn > correct_answers.length) {
             overall_lesson_progress.number_of_letters_drawn = correct_answers.length;
+            overall_lesson_progress.total_number_of_letters = correct_answers.length;
         }
 
         firebase.database().ref('/users/' + user_uid + '/stats/per_day/' + new Date().toDateString()).set(overall_progress).then(function () {
