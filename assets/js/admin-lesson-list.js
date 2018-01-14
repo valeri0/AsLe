@@ -1,22 +1,18 @@
-dict ={};
+dict = {};
 
-window.onload = function () {
-    var config = {
-        apiKey: "AIzaSyDfKkiegV-dCw0ach9PWJAIUJpDq7ZfQos",
-        authDomain: "asle-a66d5.firebaseapp.com",
-        databaseURL: "https://asle-a66d5.firebaseio.com",
-        projectId: "asle-a66d5",
-        storageBucket: "asle-a66d5.appspot.com",
-        messagingSenderId: "744977998100"
-    };
-    firebase.initializeApp(config);
-
+function Init() {
     var refFireBase = firebase.database().ref();
     refFireBase.on('value', gotData, errData);
-};
+}
 
-function getId(event){
-    var lesson_name = event.originalTarget.childNodes[3].innerText;
+function getId(event) {
+    var lesson_name;
+    if (typeof InstallTrigger !== 'undefined') { // test if we are on firefox
+        lesson_name = event.originalTarget.childNodes[3].innerText;
+    } else {
+        lesson_name = event.target.innerText;
+    }
+
     localStorage.setItem('lesson_title', dict[lesson_name]);
     window.location = 'Lesson.html';
 }
@@ -30,15 +26,35 @@ function gotData(data) {
         dict[db.Lessons[key].lesson_name] = key;
         iterator += 1;
         var Letters = "";
-        for (letter of db.Lessons[key].letters){
-            Letters +=" \"" + letter +" \" ";
+        for (letter of db.Lessons[key].letters) {
+            Letters += " \"" + letter + " \" ";
         }
+
+        var Progress;
+        if (typeof user_data.stats.lessons_progress !== 'undefined') {
+            console.log(Object.keys(user_data.stats.lessons_progress));
+            if (Object.keys(user_data.stats.lessons_progress).indexOf(key) > -1) {
+                console.log("yolo");
+                Progress = 100 * (parseInt(user_data.stats.lessons_progress[key].number_of_letters_drawn) / parseInt(user_data.stats.lessons_progress[key].total_number_of_letters));
+                console.log(parseInt(user_data.stats.lessons_progress[key].total_number_of_letters));
+            } else {
+                console.log("sunt in else");
+                Progress = 0;
+                console.log(Progress);
+            }
+        } else {
+            console.log("sunt in else");
+            Progress = 0;
+            console.log(Progress);
+        }
+
         var obj, template;
         obj = {
             name: key,
             letters: Letters,
             lesson_number: iterator,
-            lesson_title: db.Lessons[key].lesson_name
+            lesson_title: db.Lessons[key].lesson_name,
+            progress: Progress
         };
 
         template = document.getElementById('lesson-list').innerHTML;
@@ -51,13 +67,46 @@ function errData(err) {
     console.log("Error!");
 }
 
-function remove_lesson(event){
+function remove_lesson(event) {
     var lesson_title = event.path[3].children[0].childNodes[3].innerText;
-    firebase.database().ref("Lessons/"+dict[lesson_title]).remove();
+    firebase.database().ref("Lessons/" + dict[lesson_title]).remove();
 }
 
 function edit_lesson(event) {
-    var lesson_title = event.path[3].children[0].childNodes[3].innerText;
+
+    var lesson_title;
+    if (typeof InstallTrigger !== 'undefined') { // test if we are on firefox
+        lesson_title = event.target.attributes.id;
+    } else {
+        lesson_title = event.path[3].children[0].childNodes[3].innerText;
+    }
+
+
     localStorage.setItem('lesson_title', dict[lesson_title]);
     window.location.href = 'admin-edit.html';
 }
+
+function onAuthStateChange(user) {
+    if (user) {
+
+        // in caz ca este logat
+
+        let userId = user.uid;
+        user_uid = userId;
+
+        // vom face apel la baza de date pentru a prelua datele despre acesta
+
+        firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+            document.getElementById('username').innerText = snapshot.val().first_name + ' ' + snapshot.val().last_name;
+            user_data = snapshot.val();
+            Init();
+        });
+    }
+    else {
+        // in cazul in care iese din aplicatie, va fi redirectionat la pagina de start
+
+        window.location = 'Start.html';
+    }
+}
+
+firebase.auth().onAuthStateChanged(onAuthStateChange);

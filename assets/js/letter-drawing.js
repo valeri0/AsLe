@@ -17,7 +17,7 @@ let today_progress = {
 
 let lesson_progress = {
     number_of_drawn_letters: 0,
-    total_number_of_letters: 0
+    total_number_of_letters: 0,
 };
 
 let lesson = localStorage.getItem('lesson_title');
@@ -34,8 +34,6 @@ let level_threshold = {
     56: "black"
 
 };
-
-let level_color;
 
 firebase.auth().onAuthStateChanged(onAuthStateChange);
 
@@ -74,46 +72,46 @@ function onAuthStateChange(user) {
 }
 
 function Init() {
-    firebase.database().ref('/Lessons/' + lesson).once('value').then(function (snapshot) {
+    let reference = firebase.database().ref('/Lessons/' + lesson);
+    reference.on('value', getData, err => console.error("Eroare"));
+}
 
-        lesson_progress.total_number_of_letters = snapshot.val().letters.length;
+function getData(snapshot) {
+    console.log(snapshot, snapshot[snapshot.key]);
+    lesson_progress.total_number_of_letters = snapshot.val().letters.length;
 
-        for (let i = 0; i < snapshot.val().letters.length; i++) {
-            pronunciation.push(snapshot.val().letters[i]);
-            correct_answers.push(parseInt(snapshot.val().hex[i], 16));
-            paths.push(snapshot.val().paths[i]);
-            answered_correctly.push(false);
-        }
+    for (let i = 0; i < snapshot.val().letters.length; i++) {
+        pronunciation.push(snapshot.val().letters[i]);
+        correct_answers.push(parseInt(snapshot.val().hex[i], 16));
+        paths.push(snapshot.val().paths[i]);
+        answered_correctly.push(false);
+    }
 
-        let storageRef = firebase.storage().ref();
+    let storageRef = firebase.storage().ref();
 
-        let count = 0;
-        for (let path of paths) {
-            storageRef.child(path).getDownloadURL().then(function (url) {
-                let xhr = new XMLHttpRequest();
-                xhr.responseType = 'json';
-                xhr.open('GET', url);
-                xhr.onload = function (event) {
-                    count++;
-                    console.log(xhr.response);
-                    json.push(xhr.response);
+    let count = 0;
+    for (let path of paths) {
+        storageRef.child(path).getDownloadURL().then(function (url) {
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.open('GET', url);
+            xhr.onload = function (event) {
+                count++;
+                console.log(xhr.response);
+                json.push(xhr.response);
 
-                    if (count === paths.length) {
-                        setPronunciation(pronunciation[0]);
-                        arrangeAnimationData();
-                        InitAnimation(json[0]);
-                        drawBackground(correct_answers[0]);
-                    }
-                };
-                xhr.send();
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-
-    }).catch(function (error) {
-        console.error(error);
-    });
+                if (count === paths.length) {
+                    setPronunciation(pronunciation[0]);
+                    arrangeAnimationData();
+                    InitAnimation(json[0]);
+                    drawBackground(correct_answers[0]);
+                }
+            };
+            xhr.send();
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }
 }
 
 function arrangeAnimationData() {
@@ -175,6 +173,7 @@ function MovePreviousQuestion() {
 
 function syncUserProgressData() {
     let overall_lesson_progress = {number_of_letters_drawn: 0, total_number_of_letters: 0};
+    overall_lesson_progress.total_number_of_letters = correct_answers.length;
     let overall_progress = {
         score: 0,
         number_of_tries: 0,
@@ -187,18 +186,18 @@ function syncUserProgressData() {
             overall_lesson_progress = snapshot.val().lessons_progress[lesson];
             overall_lesson_progress.number_of_letters_drawn += lesson_progress.number_of_drawn_letters;
 
-            var sum = 0;
-            for (var a_lesson of Object.keys(snapshot.val().lessons_progress)) {
+            let sum = 0;
+            for (let a_lesson of Object.keys(snapshot.val().lessons_progress)) {
 
                 sum += snapshot.val().lessons_progress[a_lesson].number_of_letters_drawn;
 
             }
 
-            var threshold = 0;
+            let threshold;
 
-            for (var key of Object.keys(level_threshold)) {
+            for (let key of Object.keys(level_threshold)) {
 
-                var value_of_key = parseInt(key);
+                let value_of_key = parseInt(key);
 
                 if (sum < value_of_key) {
                     break;
@@ -208,7 +207,14 @@ function syncUserProgressData() {
 
             }
 
-            firebase.database().ref('/users/' + user_uid + '/stats/level').set({color:level_threshold[threshold]}).then(function () {
+            let color;
+            if (typeof level_threshold[threshold] === 'undefined') {
+                color = 'grey';
+            } else {
+                color = level_threshold[threshold];
+            }
+
+            firebase.database().ref('/users/' + user_uid + '/stats/level').set({color: color}).then(function () {
 
             }).catch(function (error) {
                 console.error(error);
@@ -239,7 +245,6 @@ function syncUserProgressData() {
 
         if (overall_lesson_progress.number_of_letters_drawn > correct_answers.length) {
             overall_lesson_progress.number_of_letters_drawn = correct_answers.length;
-            overall_lesson_progress.total_number_of_letters = correct_answers.length;
         }
 
         firebase.database().ref('/users/' + user_uid + '/stats/per_day/' + new Date().toDateString()).set(overall_progress).then(function () {
@@ -286,9 +291,8 @@ function testImage() {
                     answered_correctly[index] = true;
                 }
 
-                if (answered_correctly.indexOf(false) === -1) {
-                    syncUserProgressData();
-                }
+                syncUserProgressData();
+
 
                 if (lesson_progress.number_of_drawn_letters === correct_answers.length) {
                     let done = `</br><h2>You're done with an average score of: ${(lesson_score / correct_answers.length).toFixed(2)}</h2></br>
@@ -310,6 +314,7 @@ function testImage() {
                     }
                 }
 
+                syncUserProgressData();
                 document.getElementById('result').innerHTML = '<h1>' + result.text + ' Wrong</h1>' + svg_fail + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>';
                 openModal();
             }

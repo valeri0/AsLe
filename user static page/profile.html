@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>AsLe</title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
@@ -17,145 +17,145 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
-
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="sidebar" data-background-color="white" data-active-color="danger">
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
 
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="#" class="simple-text">
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
                     AsLe
                 </a>
-                </div>
-
-                <ul class="nav">
-                    <li class="active">
-                        <a href="../ListOfLessons.html">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <p>Lessons</p>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="Lessons.html">
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                            <p>Stats</p>
-                        </a>
-                    </li>
-
-                </ul>
             </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="../ListOfLessons.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Lessons</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="Lessons.html">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        <p>Stats</p>
+                    </a>
+                </li>
+
+            </ul>
         </div>
-        
-    
-    
-    <nav class="navbar" style=" width: 78%; float: right; margin: 0 9px 0px 0px; ">
+    </div>
+
+
+    <nav class="navbar">
         <div class="field">
             <i class="fa fa-user-circle user" aria-hidden="true"></i>
-            <a id ="logout-button" href="javascript:logout()" style="display: inline-block">Log out</a>
+            <a id="username" href="#" style="display: inline-block">User</a>
         </div>
-
     </nav>
 
 
-        <div class="main-panel">    
+    <div class="main-panel">
 
-            <div class="main-content">
-                <div class="content">
-                    <div class="container-fluid">
+        <div class="main-content">
+            <div class="content">
+                <div class="container-fluid">
 
-                        <div class="row">
-                            <div class="user-header">
-                                <div class="card">
-                                    <div class="content">
-                                        <div class="card hovercard">
-                                            <div  class="card-background">
-                                                <img id="photo_bg" class="card-bkimg" alt="" src="">\s
-                                            </div>
-
-                                            <div >
-                                                <label class="useravatar"  for= "image-upload">
-                                                    <img id="pht_avtr" class="photo_avatar" alt="" src="">
-                                                    <div class="overlay_photo_avatar">
-                                                        <div class = "text">Change picture</div>
-                                                    </div>
-                                                </label>
-                                                <input style="display: none " id="image-upload" type="file"  accept="image/example">
-                                            </div>
-
-                                            <div class="card-info"> <span  id = "header-name" class="card-title"></span>
-
-                                            </div>
+                    <div class="row">
+                        <div class="user-header">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="card hovercard">
+                                        <div class="card-background">
+                                            <img id="photo_bg" class="card-bkimg" alt="" src="">\s
                                         </div>
 
+                                        <div>
+                                            <label class="useravatar" for="image-upload">
+                                                <img id="pht_avtr" class="photo_avatar" alt="" src="">
+                                                <div class="overlay_photo_avatar">
+                                                    <div class="text">Change picture</div>
+                                                </div>
+                                            </label>
+                                            <input style="display: none " id="image-upload" type="file"
+                                                   accept="image/example">
+                                        </div>
 
-                                        <div style="text-align: center">
+                                        <div class="card-info"><span id="header-name" class="card-title"></span>
 
-                                            <div class="btn-group">
+                                        </div>
+                                    </div>
 
-                                                <div class="btn-group btn-group-lg" role="group">
+
+                                    <div style="text-align: center">
+
+                                        <div class="btn-group">
+
+                                            <div class="btn-group btn-group-lg" role="group">
 
 
-                                                    <button type="button" id="button_details" class="btn my_button" onclick="switchToAbout()"><i class="fa fa-id-card-o fa-1x" style="color: white"></i>
+                                                <button type="button" id="button_details" class="btn my_button"
+                                                        onclick="switchToAbout()"><i class="fa fa-id-card-o fa-1x"
+                                                                                     style="color: white"></i>
                                                     About
                                                 </button>
 
 
-                                                    <button type="button" id="button_stats" class="btn my_button" onclick="switchToStats()">
+                                                <button type="button" id="button_stats" class="btn my_button"
+                                                        onclick="switchToStats()">
                                                     <i class="fa fa-pie-chart fa-1x" style="color: white"></i>Stats
                                                 </button>
 
 
-                                                </div>
-
-
                                             </div>
 
-                                        </div>
 
+                                        </div>
 
                                     </div>
 
 
                                 </div>
+
+
                             </div>
                         </div>
+                    </div>
 
 
+                    <div id="tab1">
 
 
-                        <div id="tab1">
+                        <div class="row">
+                            <div class="half-colon">
+                                <div class="card">
+                                    <div class="content">
+                                        <div style="text-align: center">
 
-
-                            <div class="row">
-                                <div class="half-colon">
-                                    <div class="card">
-                                        <div class="content">
-                                            <div style="text-align: center">
-
-                                                <h4 style="text-align: left; font-weight: bold;">Your details</h4>
-                                                <div  id = "user-info" class="user_details">
-
-                                                </div>
+                                            <h4 style="text-align: left; font-weight: bold;">Your details</h4>
+                                            <div id="user-info" class="user_details">
 
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="half-colon">
-                                    <div class="card">
-                                        <div class="content">
+                            <div class="half-colon">
+                                <div class="card">
+                                    <div class="content">
 
 
-                                            <div style="text-align: center">
+                                        <div style="text-align: center">
 
-                                                <h4 style="margin-bottom: 20px; font-weight: bold;">You are level <span id="title_belt_color" style="color: #000099">blue</span></h4>
+                                            <h4 style="margin-bottom: 20px; font-weight: bold;">You are level <span
+                                                    id="title_belt_color" style="color: #000099">blue</span></h4>
 
-                                                <svg id="kimono_svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve" version="1.1" id="svg2" height="139px">
+                                            <svg id="kimono_svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve" version="1.1" id="svg2" height="139px">
                                                 
                                                 <metadata id="metadata8">
                                                     <rdf:RDF>
@@ -212,86 +212,16 @@
                                                 </g>
                                             </svg>
 
-                                                <a id="level_google_share" href="https://plus.google.com/share?url=" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                                                    <img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
-
-                                            </div>
-
-
+                                            <a id="level_google_share" href="https://plus.google.com/share?url="
+                                               onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                <img src="https://www.gstatic.com/images/icons/gplus-32.png"
+                                                     alt="Share on Google+"/></a>
 
                                         </div>
+
+
                                     </div>
                                 </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="hidden" id="tab2">
-
-                            <div class="row">
-
-
-                                <div>
-                                    <div class="card" style="width: 100%">
-                                        <div class="content" style="width: 100%; height: 300px;">
-
-                                            <div id="area_chart"></div>
-
-
-                                            <div style="text-align:center">
-                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-left: 20%">
-                                                    <a id="area_chart_google_share" href="https://plus.google.com/share?url=" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                                                        <img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="half-colon">
-                                    <div class="card" style="width: 100%">
-                                        <div class="content" style="width: 100%">
-                                            <div id="donut_chart"></div>
-
-                                            <div style="text-align:center">
-                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-left: 10%">
-
-                                                    <a id="donut_chart_google_share" href="https://plus.google.com/share?url=" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                                                        <img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="half-colon">
-                                    <div class="card" style="width: 100%">
-                                        <div class="content" style="width: 100%">
-                                            <div id="line_chart"></div>
-
-
-                                            <div style="text-align:center">
-                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-
-                                                    <a id="line_chart_google_share" href="https://plus.google.com/share?url=" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                                                        <img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
-
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             </div>
 
                         </div>
@@ -299,18 +229,98 @@
                     </div>
 
 
+                    <div class="hidden" id="tab2">
+
+                        <div class="row">
+
+
+                            <div>
+                                <div class="card" style="width: 100%">
+                                    <div class="content" style="width: 100%; height: 300px;">
+
+                                        <div id="area_chart"></div>
+
+
+                                        <div style="text-align:center">
+                                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style"
+                                                 style="margin-left: 20%">
+                                                <a id="area_chart_google_share"
+                                                   href="https://plus.google.com/share?url="
+                                                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                    <img src="https://www.gstatic.com/images/icons/gplus-32.png"
+                                                         alt="Share on Google+"/></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="half-colon">
+                                <div class="card" style="width: 100%">
+                                    <div class="content" style="width: 100%">
+                                        <div id="donut_chart"></div>
+
+                                        <div style="text-align:center">
+                                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style"
+                                                 style="margin-left: 10%">
+
+                                                <a id="donut_chart_google_share"
+                                                   href="https://plus.google.com/share?url="
+                                                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                    <img src="https://www.gstatic.com/images/icons/gplus-32.png"
+                                                         alt="Share on Google+"/></a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="half-colon">
+                                <div class="card" style="width: 100%">
+                                    <div class="content" style="width: 100%">
+                                        <div id="line_chart"></div>
+
+
+                                        <div style="text-align:center">
+                                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+
+                                                <a id="line_chart_google_share"
+                                                   href="https://plus.google.com/share?url="
+                                                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                    <img src="https://www.gstatic.com/images/icons/gplus-32.png"
+                                                         alt="Share on Google+"/></a>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
                 </div>
+
+
             </div>
         </div>
-
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-
-            </div>
-        </footer>
     </div>
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+
+        </div>
+    </footer>
+</div>
 
 
 </body>
@@ -337,10 +347,9 @@
 
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
-<script src ="assets/js/level-of-belt-action.js"></script>
+<script src="assets/js/level-of-belt-action.js"></script>
 
-<script src = "assets/js/get-user-data.js"></script>
-
+<script src="assets/js/get-user-data.js"></script>
 
 
 </html>

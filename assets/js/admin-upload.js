@@ -68,15 +68,6 @@ function add_description() {
 
 // data base
 function Init() {
-    var config = {
-        apiKey: "AIzaSyDfKkiegV-dCw0ach9PWJAIUJpDq7ZfQos",
-        authDomain: "asle-a66d5.firebaseapp.com",
-        databaseURL: "https://asle-a66d5.firebaseio.com",
-        projectId: "asle-a66d5",
-        storageBucket: "asle-a66d5.appspot.com",
-        messagingSenderId: "744977998100"
-    };
-    firebase.initializeApp(config);
 
     // if (localStorage.getItem('lesson_title') !== '') {
     //     console.log("yes");

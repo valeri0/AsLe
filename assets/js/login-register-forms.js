@@ -181,7 +181,7 @@ function saveUserData(userId,userData){
     firebase.database().ref('users/'+userId).set(userData)
 
         .then(function onSuccess(res){
-            window.location.href = './ListOfLessons.html';
+            // window.location.href = './ListOfLessons.html';
 
         }).catch(function onError(err){
 
@@ -224,9 +224,12 @@ function login(email,password) {
 
         .then(function onSucces(res){
 
-            //signed in with success
-
-            window.location.href = './ListOfLessons.html';
+            if(email === "admin@asle.com"){
+                window.location = 'admin-lesson-list.html';
+            }
+            else{
+                window.location = 'ListOfLessons.html';
+            }
 
         }). catch(function(error){
 
