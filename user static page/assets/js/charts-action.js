@@ -7,7 +7,7 @@ google.charts.load('visualization', '1.0', {
 
 google.charts.setOnLoadCallback(initialize);
 
-
+let total_number_of_letters = 0;
 
 
 function initialize() {
@@ -46,11 +46,11 @@ function initialize() {
                     return count;
                 }
 
-                function orderByDay(array){
-
+                function getTotalNumberOfLetters(){
 
 
                 }
+
 
                 // pentru area_chart
                 function getArrayOfScorePerDay(user_stats){
@@ -118,10 +118,26 @@ function initialize() {
 
 
 
+
+
+                    firebase.database().ref('/Lessons/').once('value').then(function (snapshot){
+
+
+
+                        for(var a_lesson of Object.keys(snapshot.val())){
+
+                            total_number_of_letters += snapshot.val()[a_lesson].letters.length;
+
+                        }
+
+
+                    });
+
+
                 var data_for_donut_chart = google.visualization.arrayToDataTable([
                     ['Task', 'Hours per Day'],
                     ['Drawn', getTotalNumberOfLettersDrawn(user_stats)],
-                    ['Remaining', 8]
+                    ['Remaining', total_number_of_letters]
                 ]);
 
 
