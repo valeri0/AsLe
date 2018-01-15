@@ -121,3 +121,26 @@ textarea{
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.fa-plus-square{
+    color: gray;
+}
+.fa-plus-square:hover{
+    color: #656565;
+}
+.fa-plus-square:active{
+    color: #6d6d6d;
+}
+
+.uploaded-files {
+    color: gray;
+}
+.fa-times{
+    color: grey;
+}
+.fa-times:hover{
+    color: #656565;
+}
+.fa-times:active{
+    color: #6d6d6d;
+}

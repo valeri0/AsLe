@@ -142,3 +142,4 @@ progress[value]::-webkit-progress-value::before {
 .card:hover {
     filter: contrast(97%);
 }
+

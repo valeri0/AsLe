@@ -1,5 +1,5 @@
 dict = {};
-
+var lessonTitle;
 function Init() {
     var refFireBase = firebase.database().ref();
     refFireBase.on('value', gotData, errData);
@@ -10,8 +10,8 @@ function getId(event) {
     if (typeof InstallTrigger !== 'undefined') { // test if we are on firefox
         lesson_name = event.originalTarget.childNodes[3].innerText;
     } else {
-        for(var path of event.path){
-            if (path.className === 'row'){
+        for (var path of event.path) {
+            if (path.className === 'row') {
                 lesson_name = path.childNodes[3].innerText;
                 break;
             }
@@ -72,9 +72,9 @@ function errData(err) {
     console.log("Error!");
 }
 
-function remove_lesson(event) {
-    var lesson_title = event.path[3].children[0].childNodes[3].innerText;
-    firebase.database().ref("Lessons/" + dict[lesson_title]).remove();
+function remove_lesson() {
+    firebase.database().ref("Lessons/" + dict[lessonTitle]).remove();
+    closeModal();
 }
 
 function edit_lesson(event) {
@@ -115,3 +115,17 @@ function onAuthStateChange(user) {
 }
 
 firebase.auth().onAuthStateChanged(onAuthStateChange);
+
+
+function openModal(event) {
+    lessonTitle = event.path[3].children[0].childNodes[3].innerText;
+    var overlay = document.getElementById('overlay');
+    overlay.classList.remove("is-hidden");
+    document.getElementsByClassName("navbar")[0].style.zIndex = 0;
+}
+
+function closeModal() {
+    var overlay = document.getElementById('overlay');
+    overlay.classList.add("is-hidden");
+    document.getElementsByClassName("navbar")[0].style.zIndex = 1;
+}
