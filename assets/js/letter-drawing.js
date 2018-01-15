@@ -77,7 +77,7 @@ function Init() {
 }
 
 function getData(snapshot) {
-    console.log(snapshot, snapshot[snapshot.key]);
+    addResources(snapshot.val().resources);
     lesson_progress.total_number_of_letters = snapshot.val().letters.length;
 
     for (let i = 0; i < snapshot.val().letters.length; i++) {
@@ -111,6 +111,19 @@ function getData(snapshot) {
         }).catch(function (error) {
             console.error(error);
         });
+    }
+}
+
+function addResources(resources) {
+    if (resources !== '') {
+        resources = resources.split('\n');
+        let resources_html = '<h2>You might also like to see</h2>\n';
+
+        for (let resource of resources) {
+            resources_html += `<a target="_blank" href=${resource} style="color: #2e6da4;">${resource}</a>\n`;
+        }
+
+        document.getElementById('resources').innerHTML = resources_html;
     }
 }
 
@@ -182,7 +195,7 @@ function syncUserProgressData() {
 
     firebase.database().ref('/users/' + user_uid + '/stats/').once('value').then(function (snapshot) {
 
-        if (typeof snapshot.val().lessons_progress[lesson] !== 'undefined') {
+        if (typeof snapshot.val().lessons_progress !== 'undefined' && typeof snapshot.val().lessons_progress[lesson] !== 'undefined') {
             overall_lesson_progress = snapshot.val().lessons_progress[lesson];
             overall_lesson_progress.number_of_letters_drawn += lesson_progress.number_of_drawn_letters;
 
@@ -222,7 +235,6 @@ function syncUserProgressData() {
 
 
         } else {
-            console.log('asd');
             overall_lesson_progress.number_of_letters_drawn = lesson_progress.number_of_drawn_letters;
         }
 
@@ -299,24 +311,28 @@ function testImage() {
                     let done = `</br><h2>You're done with an average score of: ${(lesson_score / correct_answers.length).toFixed(2)}</h2></br>
                                 <button class="done-button" onclick="window.location = 'ListOfLessons.html';">OK</button>`;
 
-                    document.getElementById('result').innerHTML = '<h1>' + result.text + ' Correct</h1>' + svg_success + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>' + done;
+                    document.getElementById('result').innerHTML = '<h1>Correct</h1>' + svg_success + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>' + done;
                 } else {
-                    document.getElementById('result').innerHTML = '<h1>' + result.text + ' Correct</h1>' + svg_success + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>';
+                    document.getElementById('result').innerHTML = '<h1>Correct</h1>' + svg_success + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>';
                 }
                 openModal();
             } else {
                 today_progress.number_of_tries += 1;
-                let choices = result.symbols[0].choices;
 
-                for (let letter of choices) {
-                    if (correct_answers[index] === letter.text.charCodeAt(0)) {
-                        score = letter.confidence;
-                        break;
+                if (typeof result.symbols[0] !== 'undefined') {
+                    let choices = result.symbols[0].choices;
+
+                    for (let letter of choices) {
+                        if (correct_answers[index] === letter.text.charCodeAt(0)) {
+                            score = letter.confidence;
+                            break;
+                        }
                     }
+
+                    syncUserProgressData();
                 }
 
-                syncUserProgressData();
-                document.getElementById('result').innerHTML = '<h1>' + result.text + ' Wrong</h1>' + svg_fail + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>';
+                document.getElementById('result').innerHTML = '<h1>Wrong</h1>' + svg_fail + '</br><h2>You got a score of: ' + score.toFixed(2) + '</h2>';
                 openModal();
             }
         })
