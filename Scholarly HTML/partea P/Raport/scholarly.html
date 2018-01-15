@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="project,infoiasi,cliw,web">
+    <title>AsLe - Scholarly Raport</title>
+    <link rel="stylesheet" href="http://scholarly.vernacular.io/scholarly.css">
+</head>
+
+<body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+        <p class="title">AsLe - Scholarly Raport</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+        <h1>AsLe</h1>
+        <section>
+            <ol>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/valeri0" typeof="schema:Person">
+                        <span property="schema:givenName">Mihăilă</span>
+                        <span property="schema:familyName">Valerio</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+            </sup>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/TudosaOvidiu" typeof="schema:Person">
+                        <span property="schema:givenName">Tudosă</span>
+                        <span property="schema:familyName">Ovidiu</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/eduard-tuduri" typeof="schema:Person">
+                        <span property="schema:givenName">Tuduri</span>
+                        <span property="schema:familyName">Eduard  Gabriel</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+            </ol>
+            <ol>
+                <a href="https://www.info.uaic.ro/bin/Main/">
+                    <span property="schema:name">Facultatea de Informatica Iasi , Universitatea Alexandru Ioan Cuza</span>
+                </a>
+            </ol>
+        </section>
+
+        <section typeof="sa:Abstract" id="abstract">
+            <h2>Cuprins</h2>
+            <p>1.Progresul proiectului</p>
+            <p>2.Arhitectura</p>
+            <p>3.Exploatarea solutiei realizate</p>
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>1.Progresul proiectului</h2>
+                <p>
+               În această parte a proiectului a fost implementată funcționalitatea aplicației, reușind să realizăm MVP-ul aplicației cât și alte funcționalități adiacente. 
+                </p>
+                <p>Funcționalitățile adăugate aplicației sunt următoarele:
+                </p>
+                <h4> 1.1 Înregistrarea și autentificarea </h4>
+                <p>
+                    Utilizatorul se poate înregistra folosind un email și o parolă, completând un formular printre care se află și alte informații necesare (e.g. Nume, Prenume). Dar de asemenea și folosind contul său de Google dacă dorește, informațiile cerute în formular fiind completate direct din împerecherea cu Google.
+                </p>
+
+                <h4> 1.2 Asistarea aplicației în desenarea simbolului</h4>
+                <p>
+                    Aplicația ajută utilizatorul în desenarea unui simbol din alfabetul japonez, setând un șablon pe canvas-ul de desenat cu litera respectivă, plus o animație cu desenarea acesteia.
+                    
+                </p>
+                <p>
+                    Când utilizatorul desenează peste șablonul generat, la o precizie dată, dacă depășește conturl, culoarea brush-ului se va face roșu.
+                </p>
+            
+                <h4> 1.3 Înregistrarea unui scor pentru un simbol desenat</h4>
+                <p>
+                    Pentru fiecare simbol desenat, utilizatorul va fi răsplătit cu un scor pentru aceasta. Scorul este calculat folosind bliblioteca tessaract.js, care pentru un desen primit ca input va returna o listă de simboluri ordonate descrescător după un nivel de similaritate. 
+                </p>
+                <h4> 1.4 Monitorizarea și distribuirea progresului</h4>
+                <p>
+                    Pentru fiecare simbol desenat și lecție completată, utilizatorul va putea observa pe pagina sa de profil statistici ce redau evoluția sa în ultimile zile în desenarea simbolurilor.
+                </p>
+            
+                <p>
+                    De asemenea, pe pagina utilizatorului se află un kimono, unde culoarea centurii se schimbă conform numărului de litere completate cu succes. Pentru a contura aspectul de joc a aplicației.
+                </p>
+                <p>
+                    Pe lângă acestea, utilizatorul poate vizualiza la fiecare lecție în parte procentul completat la acea lecție
+                </p>
+                <p>
+                    Statisticile pot fi distribuite pe rețeaua de socializare Google+ folosind butonul aferent din josul acestora.
+                </p>
+            
+                <h4>
+                    1.5 Dashboard-ul de admin
+                </h4>
+                <p>
+                    Utilizatorii ce au rolul de administrator, pot adăuga, edita sau a șterge lecții folosind un dashboard. Acesta apare imediat la autentificarea unui utilizator ce are rolul admin.
+                </p>
+            
+                
+            
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>2.Arhitectura</h2>
+            <p>
+                Aplicația este una de tip "serverless", majoritatea logicii sale fiind la nivel de client (folosind javascript). 
+            </p>
+            <p>
+                Iar ca manieră de stocare a datelor și a fișierelor cât și autentificare am apelat la API-ul oferit de Firebase.
+            </p>
+        </section>
+        
+        
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2> 3.Exploatarea solutiei realizate </h2>
+            <p>
+                
+            <p>
+                Soluția găsită pentru această aplicație poate fi extinsă, în special în sincronizarea cu Facebook. Pentru a putea fi realizat acest lucru, este necesar găzduirea aplicației pe un domeniu și securizat pentru a permite boților de la facebook să navigheze prin aplicație și a primi permisiunea de folosirea API-ului de la Facebook.
+    
+
+        </section>
+    </article>
+
+</body>
+
+</html>

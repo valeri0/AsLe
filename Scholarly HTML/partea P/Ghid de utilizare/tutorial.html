@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="project,infoiasi,cliw,web">
+    <title>AsLe - Scholarly Raport</title>
+    <link rel="stylesheet" href="http://scholarly.vernacular.io/scholarly.css">
+</head>
+
+<body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+        <p class="title">AsLe - Ghid de utilizare</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+        <h1>AsLe</h1>
+        <section>
+            <ol>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/valeri0" typeof="schema:Person">
+                        <span property="schema:givenName">Mihăilă</span>
+                        <span property="schema:familyName">Valerio</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+            </sup>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/TudosaOvidiu" typeof="schema:Person">
+                        <span property="schema:givenName">Tudosă</span>
+                        <span property="schema:familyName">Ovidiu</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/eduard-tuduri" typeof="schema:Person">
+                        <span property="schema:givenName">Tuduri</span>
+                        <span property="schema:familyName">Eduard  Gabriel</span>
+                    </a>
+                    <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/"></a>
+                </li>
+            </ol>
+            <ol>
+                <a href="https://www.info.uaic.ro/bin/Main/">
+                    <span property="schema:name">Facultatea de Informatica Iasi , Universitatea Alexandru Ioan Cuza</span>
+                </a>
+            </ol>
+        </section>
+
+        <section typeof="sa:Abstract" id="abstract">
+            <h2>Cuprins</h2>
+            <p>1.Înregistrarea și autentificarea</p>
+            <p>2.Desenarea simbolurilor</p>
+            <p>3.Vizualizarea și distribuirea progresului</p>
+            <p>4.Dashboard-ul de administrator</p>
+        </section>
+
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2>1.Înregistrarea și autentificarea</h2>
+
+            <p>
+                Pentru a intra în aplicație este nevoie de înregistrare sau de autentificare.
+
+            </p>
+            <p>
+                Prima pagină afișată este cea de login. Unde fie utilizatorul se conectează cu email și parolă sau cu contul de Google (chiar dacă nu s-a înregistrat cu contul de Google, merge direct din formularul de login înregistrarea cu Google).
+            </p>
+            <img src="img/login.jpg" alt="">
+
+            <p>
+                În caz că utilizatorul dorește să își creeze cont, poate apăsa în josul formularului de Login pe "Register here!" și următorul formular va apărea.
+            </p>
+            <img src="img/register.jpg" alt="">
+
+            <p>
+                După ce una din cele două operații au fost terminate cu succes, utilizatorul va intra în aplicația propriu zisă.
+            </p>
+        </section>
+
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2> 2. Desenarea simbolurilor </h2>
+            
+            <p>
+                După autentificare cu succes în aplicația, va apărea următoarea pagină ce conține lista de lecții și în colțul de dreapta sus un link către pagina de profil a utilizatorului.
+            </p>
+            <img src="img/list_of_lessons.jpg" alt="">
+            
+            <p>
+                După ce intram pe o lecție putem observa animația în partea de sus a chenarului de desenat, săgeți de navigare între simbolurile lecției, cât și fundalul gri reprezentând simbolul ce vine în ajutorul utilizatorului pentru a respecta cât mai bine desenarea simbolului.
+                
+            </p>
+            
+            <p>
+                Ce e marcat cu roșu reprezintă deviații ale utilizatorului de la acel contur.
+            </p>
+            
+            <p>
+                În josul chenarului avem butonul "Test", care trimite desenul utilizatorului către aplicație pentru a-l verifica și a-i da un scor, iar "Cancel" pentru a anula ce a desenat.
+            </p>
+            
+            <img src="img/lesson.jpg" alt="">
+            
+            <p>
+                Iată un exemplu de evaluare a unui simbol.
+            </p>
+            <img src="img/lesson_correct.jpg" alt="">
+            
+        </section>
+
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2> 3.Vizualizarea și distribuirea progresulue </h2>
+            
+            <p>
+                Pe pagina de profil a utilizatorului se pot observa datele despre acesta cât și nivelul actual (culoarea centurii).
+            </p>
+            <img src="img/user_profile_about.jpg" alt="">
+            
+            <p>
+                Iar daca dăm click pe tab-ul "Stats" de sub poza de profil a acestuia, vom accesa statisticile generate în urma desenării simbolurilor, ce marchează progresul acestuia în aplicație.
+            </p>
+            
+            <img src="img/user_stats.jpg" alt="">
+            <p>
+                Pentru a distribui progresul pe rețeaua de socializare "Google+", putem da click pe iconița specifică din josul graficului, iar pop-up de genul va apărea.
+            </p>
+            <img src="img/user_stats_share.jpg" alt="">
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods" id="motivation">
+            <h2> 4.Dashboard-ul de administrator </h2>
+            <p>
+                Un utilizator de admin poate intra în aplicație precum un utilizator obișnuit. La intrarea unui utilizator în aplicație se verifică ce fel de utilizator este, pentru a ști ce pagini putem face disponibile pentru acesta. În cazul adminului, el are acces la propriul său dashboard pentru a gestiona lecțiile.
+            </p>
+            <p>
+                Pagina de întâmpinare a administratorului dupa autentificare este cea de mai jos, care cuprinde meniul din stânga și lecțiile disponibile în acest moment în aplicație
+            </p>
+            <img src="img/admin_lesson_list.jpg" alt="">
+            
+            <p>
+                Dacă administratorul apasă pe iconița în formă de "coș de reciclat", acesta va putea șterge o lecție cu toate simbolurile aferente ei.
+            </p>
+            <p>
+                Dacă dă click pe "creion", acesta va putea edita lecția cu pricina.
+                
+            </p>
+            <img src="img/admin_lesson_edit1.jpg" alt="">
+            <img src="img/admin_lesson_edit2.jpg" alt="">
+            
+            <p>
+                Pe bara din stânga putem observa butonul "Upload Lesson", ce va trimite la un formular de completare pentru a înregistra o nouă lecție cu simbolurile aferente în aplicație.
+            </p>
+            
+            <img src="img/admin_lesson_upload.jpg" alt="">
+            <img src="img/admin_lesson_upload2.jpg" alt="">
+        </section>
+
+    </article>
+
+</body>
+
+</html>
