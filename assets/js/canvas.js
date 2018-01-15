@@ -194,3 +194,18 @@ function drawBackground(letter) {
     ctx.fillStyle = 'gray';
     ctx.fillText(String.fromCharCode(letter), 270, 280);
 }
+
+window.addEventListener('resize', function () {
+    var canvas = document.getElementById('myCanvas');
+
+    if (window.innerWidth === screen.width) {
+        canvas.setAttribute('width', '800');
+        // canvas.removeAttribute('height');
+        // canvas.setAttribute('height','400');
+    }
+    console.log(window.innerWidth);
+    canvas.removeAttribute('width');
+    canvas.style.width = (innerWidth * 0.5).toString() + 'px';
+    canvas.removeAttribute('height');
+    canvas.setAttribute('height', '400');
+})

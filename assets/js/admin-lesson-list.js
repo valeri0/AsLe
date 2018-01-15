@@ -10,7 +10,12 @@ function getId(event) {
     if (typeof InstallTrigger !== 'undefined') { // test if we are on firefox
         lesson_name = event.originalTarget.childNodes[3].innerText;
     } else {
-        lesson_name = event.target.innerText;
+        for(var path of event.path){
+            if (path.className === 'row'){
+                lesson_name = path.childNodes[3].innerText;
+                break;
+            }
+        }
     }
 
     localStorage.setItem('lesson_title', dict[lesson_name]);

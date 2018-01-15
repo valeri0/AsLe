@@ -182,7 +182,7 @@ function syncUserProgressData() {
 
     firebase.database().ref('/users/' + user_uid + '/stats/').once('value').then(function (snapshot) {
 
-        if (typeof snapshot.val().lessons_progress !== 'undefined') {
+        if (typeof snapshot.val().lessons_progress[lesson] !== 'undefined') {
             overall_lesson_progress = snapshot.val().lessons_progress[lesson];
             overall_lesson_progress.number_of_letters_drawn += lesson_progress.number_of_drawn_letters;
 
@@ -222,6 +222,7 @@ function syncUserProgressData() {
 
 
         } else {
+            console.log('asd');
             overall_lesson_progress.number_of_letters_drawn = lesson_progress.number_of_drawn_letters;
         }
 
